@@ -8,7 +8,6 @@
     "lint": "next lint"
   },
   "author": "Hasnat Sajid <hasnatsajid965@gmail.com> (https://hasnatsajid.com)",
-  // "author": "Jamie Barton <jamie@notrab.dev> (https://notrab.dev)",
   "dependencies": {
     "@tailwindcss/forms": "0.5.3",
     "classcat": "5.0.4",

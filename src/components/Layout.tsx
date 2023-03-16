@@ -10,24 +10,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <header className="py-6 md:py-12">
-        <div className="max-w-6xl mx-auto px-6">
+      <header className="py-6 md:py-6">
+        <div className="max-w-8xl mx-auto px-6">
           <div className="flex items-center justify-between">
-            <div className="md:w-1/3">
-              <nav className="flex items-center justify-start space-x-3 md:space-x-6">
-                <Link href="/about">
-                  <a className="text-gray-800 hover:text-blue-600 p-1 transition">
-                    About
-                  </a>
-                </Link>
-                <Link href="/terms-of-sale">
-                  <a className="text-gray-800 hover:text-blue-600 p-1 transition">
-                    Terms of Sale
-                  </a>
-                </Link>
-              </nav>
-            </div>
-            <div className="flex-1 flex items-center justify-center">
+            <div className="items-center justify-start">
+              {/* <div className="flex-1 flex items-center justify-start"> */}
               <Link href="/">
                 <a className="flex items-center text-gray-900">
                   <div className="rounded-full w-12 h-12 flex items-center justify-center mr-4">
@@ -45,11 +32,26 @@ const Layout = ({ children }) => {
                     </svg>
                   </div>
                   <span className="text-lg font-medium">
-                    Headless Dropshipping Starter
+                    <b>Omcub</b>
                   </span>
                 </a>
               </Link>
             </div>
+            <div className="md:w-1/3">
+              <nav className="flex items-center justify-start space-x-3 md:space-x-6">
+                <Link href="/about">
+                  <a className="text-gray-800 hover:text-blue-600 p-1 transition">
+                    Men
+                  </a>
+                </Link>
+                <Link href="/terms-of-sale">
+                  <a className="text-gray-800 hover:text-blue-600 p-1 transition">
+                    Women
+                  </a>
+                </Link>
+              </nav>
+            </div>
+
             <div className="md:w-1/3 flex items-center justify-end space-x-3 -mr-2.5">
               <button
                 className="snipcart-customer-signin appearance-none px-2 text-gray-800 hover:text-blue-600 rounded-md cursor-pointer focus:outline-none focus:text-blue-600 transition relative"
@@ -102,9 +104,7 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </header>
-      <main className="py-6 md:py-12">
-        <div className="max-w-6xl mx-auto px-6">{children}</div>
-      </main>
+      <main className="py-2 md:pb-12">{children}</main>
       <footer className="max-w-6xl mx-auto px-6">
         <div className="py-6 border-t border-gray-100 text-center flex flex-col md:flex-row items-center justify-between">
           <p className="text-gray-600 text-sm">

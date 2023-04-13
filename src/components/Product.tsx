@@ -94,7 +94,7 @@ const Product = (product) => {
           data-item-price={activeVariant.retail_price}
           data-item-url={`/api/products/${activeVariantExternalId}`}
           data-item-description={activeVariant.name}
-          data-item-image={activeVariantFile.preview_url}
+          data-item-image={activeVariantFile?.preview_url}
           data-item-name={name}
         >
           Add to Cart

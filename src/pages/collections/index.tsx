@@ -72,50 +72,12 @@ function Collections({ products }) {
             </div>
 
             <div className="filters my-6">
-              <button className="border border-black rounded-2xl px-4">
+              {/* <button className="border border-black rounded-2xl px-4">
                 Filters
-              </button>
+              </button> */}
             </div>
 
-            <div className="catalogue grid  lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
-              <div className="product mb-8 px-6">
-                <div className="product_container">
-                  <div className="tile_note text-xs text-orange-400">
-                    NEW ARRIVAL
-                  </div>
-                  <div className="image">
-                    <img src="/images/shirt1.webp" alt="Shirt 1" />
-                  </div>
-                  <div className="info flex justify-between border-t border-gray-300 pt-3">
-                    <div className="title text-base font-bold font-serif">
-                      Bless Up Breathable Stretch Shirt
-                    </div>
-                    <div className="price">$89</div>
-                  </div>
-                  <div className="options text-xs py-1">Hinano Dark Navy</div>
-                  <div className="category text-xs">Shirt</div>
-                  <div className="rating"></div>
-                </div>
-              </div>
-              <div className="product mb-6 px-6">
-                <div className="product_container">
-                  <div className="tile_note text-xs text-orange-400">
-                    NEW ARRIVAL
-                  </div>
-                  <div className="image">
-                    <img src="/images/shirt1.webp" alt="Shirt 1" />
-                  </div>
-                  <div className="info flex justify-between border-t border-gray-300 pt-3">
-                    <div className="title text-base font-bold font-serif">
-                      Bless Up Breathable Stretch Shirt
-                    </div>
-                    <div className="price">$89</div>
-                  </div>
-                  <div className="options text-xs py-1">Hinano Dark Navy</div>
-                  <div className="category text-xs">Shirt</div>
-                  <div className="rating"></div>
-                </div>
-              </div>
+            <div className="hidden catalogue grid  lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
               <div className="product mb-6 px-6">
                 <div className="product_container">
                   <div className="tile_note text-xs text-orange-400">
@@ -203,22 +165,25 @@ function Collections({ products }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { result: productIds } = await printful.get("sync/products");
-  const allProducts = await Promise.all(
-    productIds.map(async ({ id }) => await printful.get(`sync/products/${id}`))
-  );
-  const products: PrintfulProduct[] = allProducts.map(
-    ({ result: { sync_product, sync_variants } }) => ({
-      ...sync_product,
-      variants: sync_variants.map(({ name, ...variant }) => ({
-        name: formatVariantName(name),
-        ...variant,
-      })),
-    })
-  );
+  // const { result: productIds } = await printful.get("sync/products");
+  const { result } = await printful.get("/products");
+  // const { result } = await printful.get("/products?category_id=32");
+  // const allProducts = await Promise.all(
+  //   productIds.map(async ({ id }) => await printful.get(`sync/products/${id}`))
+  // );
+  // const products: PrintfulProduct[] = allProducts.map(
+  //   ({ result: { sync_product, sync_variants } }) => ({
+  //     ...sync_product,
+  //     variants: sync_variants.map(({ name, ...variant }) => ({
+  //       name: formatVariantName(name),
+  //       ...variant,
+  //     })),
+  //   })
+  // );
+
   return {
     props: {
-      products: products,
+      products: result,
       // products: shuffle(products),
     },
   };

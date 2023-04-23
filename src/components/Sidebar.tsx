@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Sidebar = ({ setMenuOpen }) => {
   return (
     <div className="side-menu z-[100] fixed h-screen bg-white w-screen block sm:hidden overflow-scroll">
@@ -11,167 +13,167 @@ const Sidebar = ({ setMenuOpen }) => {
       <div className="menu-items w-5/6 mx-auto my-6">
         <div className="menu-item my-4">
           <div className="item font-serif font-bold">
-            <a href="/">Tops</a>
+            <Link href="/">Tops</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Shirts</a>
+            <Link href="">Shirts</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">Tees</a>
+            <Link href="/">Tees</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">Knits</a>
+            <Link href="/">Knits</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">Sweatshirts & hoodies</a>
+            <Link href="/">Sweatshirts & hoodies</Link>
           </div>
         </div>
         <div className="menu-item my-4">
           <div className="item font-serif font-bold">
-            <a href="/">Bottoms</a>
+            <Link href="/">Bottoms</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Sports wear</a>
+            <Link href="">Sports wear</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">Skirts</a>
+            <Link href="/">Skirts</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">Shorts</a>
+            <Link href="/">Shorts</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">Boardshorts</a>
+            <Link href="/">Boardshorts</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">Pants</a>
+            <Link href="/">Pants</Link>
           </div>
         </div>
         <div className="menu-item my-4">
           <div className="item font-serif font-bold">
-            <a href="/">Accessories</a>
+            <Link href="/">Accessories</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Bags</a>
+            <Link href="">Bags</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">Shoes</a>
+            <Link href="/">Shoes</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">Hats</a>
+            <Link href="/">Hats</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">Beanies</a>
+            <Link href="/">Beanies</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">Gear</a>
+            <Link href="/">Gear</Link>
           </div>
         </div>
         <div className="menu-item my-4">
           <div className="item font-serif font-bold">
-            <a href="/">Women</a>
+            <Link href="/">Women</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">T-shirts</a>
+            <Link href="">T-shirts</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">All over t-shirt</a>
+            <Link href="/">All over t-shirt</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">Crop tops</a>
+            <Link href="/">Crop tops</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">3/4 sleeve shirts</a>
+            <Link href="/">3/4 sleeve shirts</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">Jackets and hoodies</a>
+            <Link href="/">Jackets and hoodies</Link>
           </div>
         </div>
         <div className="menu-item my-4">
           <div className="item font-serif font-bold">
-            <a href="/">Home decor</a>
+            <Link href="/">Home decor</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Pillow cases</a>
+            <Link href="">Pillow cases</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="/">Blankets</a>
+            <Link href="/">Blankets</Link>
           </div>
         </div>
         <div className="menu-item my-4">
           <div className="item font-serif font-bold">
-            <a href="/">Stationery</a>
+            <Link href="/">Stationery</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Stickers</a>
+            <Link href="">Stickers</Link>
           </div>
         </div>
         <div className="menu-item my-4">
           <div className="item font-serif font-bold">
-            <a href="/">Aporns</a>
+            <Link href="/">Aporns</Link>
           </div>
         </div>
         <div className="menu-item my-4">
           <div className="item font-serif font-bold">
-            <a href="/">Fabrics</a>
+            <Link href="/">Fabrics</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Sports wear</a>
+            <Link href="">Sports wear</Link>
           </div>
         </div>
         <div className="menu-item my-4">
           <div className="item font-serif font-bold">
-            <a href="/">Towels</a>
+            <Link href="/">Towels</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Bags</a>
+            <Link href="">Bags</Link>
           </div>
         </div>
         <div className="menu-item my-4">
           <div className="item font-serif font-bold">
-            <a href="/">Pet products</a>
+            <Link href="/">Pet products</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Dog food</a>
+            <Link href="">Dog food</Link>
           </div>
         </div>
         <div className="menu-item my-4">
           <div className="item font-serif font-bold">
-            <a href="/">Collections</a>
+            <Link href="/">Collections</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Best sellers</a>
+            <Link href="">Best sellers</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Premium products</a>
+            <Link href="">Premium products</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Fall & winter</a>
+            <Link href="">Fall & winter</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Sportswear</a>
+            <Link href="">Sportswear</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Streetwear</a>
+            <Link href="">Streetwear</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Beachwear</a>
+            <Link href="">Beachwear</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Halloween</a>
+            <Link href="">Halloween</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Back to school</a>
+            <Link href="">Back to school</Link>
           </div>
         </div>
         <div className="menu-item my-4">
           <div className="item font-serif font-bold">
-            <a href="/">Featured</a>
+            <Link href="/">Featured</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">Best sellers</a>
+            <Link href="">Best sellers</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <a href="">New arrivals</a>
+            <Link href="">New arrivals</Link>
           </div>
         </div>
       </div>

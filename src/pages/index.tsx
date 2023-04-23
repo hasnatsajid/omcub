@@ -79,7 +79,7 @@ const IndexPage = ({ products }) => {
           <div className="title flex justify-between w-4/5 mx-auto">
             <div className="info relative">
               <h2 className="heading sm:text-[22px] font-serif font-bold">
-                Men's New Arrivals
+                Men&apos;s New Arrivals
               </h2>
               <div className="count text-[13px]">126 items</div>
             </div>
@@ -99,7 +99,7 @@ const IndexPage = ({ products }) => {
           <div className="title flex justify-between w-4/5 mx-auto">
             <div className="info relative">
               <h2 className="heading sm:text-[22px] font-serif font-bold">
-                Women's Collection
+                Women&apos;s Collection
               </h2>
               <div className="count text-[13px]">126 items</div>
             </div>

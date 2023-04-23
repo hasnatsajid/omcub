@@ -50,7 +50,7 @@ function Collections({ products }) {
                 <h1 className="font-semibold">Shirts</h1>
               </div>
               <div className="sub text-xs text-[#77706c] py-1">
-                There's a story in every stitch
+                There&apos;s a story in every stitch
               </div>
             </div>
             <div className="categories flex pb-6 border-b border-gray-200">

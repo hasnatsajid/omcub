@@ -5,6 +5,7 @@ import useWishlistDispatch from "../hooks/useWishlistDispatch";
 import useWishlistState from "../hooks/useWishlistState";
 
 import VariantPicker from "./VariantPicker";
+import Link from "next/link";
 
 const Product = (product) => {
   // console.log(product);
@@ -37,8 +38,6 @@ const Product = (product) => {
   const addToWishlist = () => addItem(product);
 
   const onWishlist = isSaved(id);
-
-  console.log(onWishlist);
 
   return (
     <div className="product mb-6 px-6">
@@ -83,11 +82,13 @@ const Product = (product) => {
           />
         </div>
         <div className="info flex justify-between border-t border-gray-300 pt-3">
-          <div className="title text-base font-bold font-serif">
-            {product.title.length > 55
-              ? product.title.substring(0, 55) + "..."
-              : product.title}
-          </div>
+          <Link href={`/product/${product.id}`}>
+            <div className="title text-base font-bold font-serif cursor-pointer">
+              {product.title.length > 55
+                ? product.title.substring(0, 55) + "..."
+                : product.title}
+            </div>
+          </Link>
           {/* <div className="price">$89</div> */}
         </div>
         {/* <div className="options text-xs py-1">{product.brand}</div> */}

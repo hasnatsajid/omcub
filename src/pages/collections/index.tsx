@@ -8,6 +8,7 @@ import { PrintfulProduct } from "../../types";
 import ProductGrid from "../../components/ProductGrid";
 
 function Collections({ products }) {
+  console.log(products);
   return (
     <>
       <div className="scrollbar border-b border-t border-gray-200">
@@ -167,6 +168,7 @@ function Collections({ products }) {
 export const getStaticProps: GetStaticProps = async () => {
   // const { result: productIds } = await printful.get("sync/products");
   const { result } = await printful.get("/products");
+  // const { result } = await printful.get("/products");
   // const { result } = await printful.get("/products?category_id=32");
   // const allProducts = await Promise.all(
   //   productIds.map(async ({ id }) => await printful.get(`sync/products/${id}`))

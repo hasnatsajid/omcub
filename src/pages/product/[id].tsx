@@ -1,6 +1,20 @@
+import { GetStaticProps } from "next";
+import { printful } from "../../lib/printful-client";
+
 import Carousel from "../../components/Carousel";
 
-function Product() {
+function Product({ productData }) {
+  const { product, variants } = productData;
+  console.log(product, variants);
+
+  // const uniqueColors = [...new Set(variants.map((item) => item.color))];
+  // const uniqueColorCodes = [
+  //   ...new Set(variants.map((item) => item.color_code)),
+  // ];
+  // console.log(uniqueColors, uniqueColorCodes);
+
+  // const variantImages = variants.map((variant) => variant.image);
+
   return (
     <>
       <div className="scrollbar border-b border-t border-gray-200">
@@ -37,17 +51,17 @@ function Product() {
       <div className="product bg-[#f9f9f9]">
         <div className="wrapper lg:flex w-4/5 m-auto ">
           <div className="carousel flex-1">
-            <Carousel />
+            <Carousel images={variants} />
           </div>
           <div className="product_form 2xl:w-3/12 md:w-2/6">
             <div className="title flex justify-between pt-6 pb-2 items-start">
               <div className="heading font-serif text-[22px] w-3/4">
-                Bless Up Breathable Stretch Shirt
+                {product.title}
               </div>
               <div className="price text-xl font-bold">$89</div>
             </div>
             <div className="info text-[13px] border-b border-gray-300 pb-4">
-              <div className="category text-[#736b67]">Shirt</div>
+              <div className="category text-[#736b67]">{product.type_name}</div>
               <div className="rating"></div>
             </div>
             <div className="variants my-6">
@@ -110,5 +124,45 @@ function Product() {
     </>
   );
 }
+
+// export async function getStaticPaths() {
+//   return {
+//     paths: [],
+//     // paths: [{ params: { id: "362" } }, { params: { id: "605" } }],
+//     fallback: true,
+//   };
+// }
+
+export const getServerSideProps = async (context) => {
+  // const { result: productIds } = await printful.get("sync/products");
+  // const { result } = await printful.get(`/products/362`);
+  const response = await fetch(
+    `https://api.printful.com/products/${context.params.id}`
+  );
+  const { result } = await response.json();
+  // console.log(jsonData);
+
+  // const { result } = await printful.get("/products");
+  // const { result } = await printful.get("/products?category_id=32");
+  // const allProducts = await Promise.all(
+  //   productIds.map(async ({ id }) => await printful.get(`sync/products/${id}`))
+  // );
+  // const products: PrintfulProduct[] = allProducts.map(
+  //   ({ result: { sync_product, sync_variants } }) => ({
+  //     ...sync_product,
+  //     variants: sync_variants.map(({ name, ...variant }) => ({
+  //       name: formatVariantName(name),
+  //       ...variant,
+  //     })),
+  //   })
+  // );
+
+  return {
+    props: {
+      productData: result,
+      // products: shuffle(products),
+    },
+  };
+};
 
 export default Product;

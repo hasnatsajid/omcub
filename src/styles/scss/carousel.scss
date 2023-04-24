@@ -18,6 +18,7 @@
     width: 100%;
     // max-height: 300px;
     object-fit: cover;
+    height: 80vh;
   }
 
   /* Next & previous buttons */
@@ -78,7 +79,8 @@
   .dot {
     cursor: pointer;
     height: 5px;
-    width: 50px;
+    width: -webkit-fill-available;
+    // width: 50px;
     margin: 0 5px;
     background-color: #ededed;
     border-radius: 0%;

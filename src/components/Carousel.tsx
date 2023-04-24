@@ -18,34 +18,38 @@ const photos = [
   },
 ];
 
-const Carousel = () => {
+const Carousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // move to the next photo
   // if we are at the end, go to the first photo
   const next = () => {
-    setCurrentIndex((currentIndex + 1) % photos.length);
+    setCurrentIndex((currentIndex + 1) % images.length);
   };
 
   // move to the previous photo
   // if we are at the beginning, go to the last photo
   const prev = () => {
-    setCurrentIndex((currentIndex - 1 + photos.length) % photos.length);
+    setCurrentIndex((currentIndex - 1 + images.length) % images.length);
   };
 
   return (
     <>
       {/* Render the carousel */}
       <div className="slider-container sm:w-[600px] w-full">
-        {photos.map((photo) => (
+        {images.map((photo) => (
           <div
             key={photo.id}
             // if the photo is the current photo, show it
             className={
-              photos[currentIndex].id === photo.id ? "fade" : "slide fade"
+              images[currentIndex].id === photo.id ? "fade" : "slide fade"
             }
           >
-            <img src={photo.url} alt={photo.title} className="photo" />
+            <img
+              src={photo.image}
+              alt={photo.title || photo.name}
+              className="photo"
+            />
             {/* <div className="caption">{photo.title}</div> */}
           </div>
         ))}
@@ -63,15 +67,15 @@ const Carousel = () => {
 
       {/* Render dots indicator */}
       <div className="dots">
-        {photos.map((photo) => (
+        {images.map((photo) => (
           <span
             key={photo.id}
             // highlight the dot that corresponds to the current photo
             className={
-              photos[currentIndex].id === photo.id ? "dot active" : "dot"
+              images[currentIndex].id === photo.id ? "dot active" : "dot"
             }
             // when the user clicks on a dot, go to the corresponding photo
-            onClick={() => setCurrentIndex(photos.indexOf(photo))}
+            onClick={() => setCurrentIndex(images.indexOf(photo))}
           ></span>
         ))}
       </div>

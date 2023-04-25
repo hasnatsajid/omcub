@@ -74,9 +74,9 @@ function Product({ productData }) {
               </div>
               <div className="variant_catalogue grid grid-cols-4 gap-2 py-4">
                 {uniqueColors &&
-                  uniqueColors.map((color) => (
+                  uniqueColors.map((color, i) => (
                     <div
-                      key={color}
+                      key={i}
                       className={`w-[70px] h-[70px] item mr-[7px] mb-[7px] border border-2 border-black bg-\[${color}\]`}
                     ></div>
                   ))}

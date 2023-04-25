@@ -5,10 +5,13 @@ import Carousel from "../../components/Carousel";
 
 function Product({ productData }) {
   const { product, variants } = productData;
-  console.log(product, variants);
+  // console.log(product, variants);
 
-  const uniqueColors = [...new Set(variants.map((item) => item.color_code))];
+  const uniqueColors = Array.from(
+    new Set(variants.map((item) => item.color_code))
+  );
   console.log(uniqueColors);
+  // console.log(uniqueColors);
   // const uniqueColorCodes = [
   //   ...new Set(variants.map((item) => item.color_code)),
   // ];
@@ -74,7 +77,7 @@ function Product({ productData }) {
                   uniqueColors.map((color) => (
                     <div
                       key={color}
-                      className={`item mr-[7px] mb-[7px] border border-2 border-black bg-\[${color}\]`}
+                      className={`w-[70px] h-[70px] item mr-[7px] mb-[7px] border border-2 border-black bg-\[${color}\]`}
                     ></div>
                   ))}
 

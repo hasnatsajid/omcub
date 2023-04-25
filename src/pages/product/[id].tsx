@@ -7,7 +7,8 @@ function Product({ productData }) {
   const { product, variants } = productData;
   console.log(product, variants);
 
-  // const uniqueColors = [...new Set(variants.map((item) => item.color))];
+  const uniqueColors = [...new Set(variants.map((item) => item.color_code))];
+  console.log(uniqueColors);
   // const uniqueColorCodes = [
   //   ...new Set(variants.map((item) => item.color_code)),
   // ];
@@ -69,18 +70,17 @@ function Product({ productData }) {
                 Hinano Dark Navy
               </div>
               <div className="variant_catalogue grid grid-cols-4 gap-2 py-4">
-                <div className="item mr-[7px] mb-[7px] border border-2 border-black">
+                {uniqueColors &&
+                  uniqueColors.map((color) => (
+                    <div
+                      key={color}
+                      className={`item mr-[7px] mb-[7px] border border-2 border-black bg-\[${color}\]`}
+                    ></div>
+                  ))}
+
+                {/* <div className="item mr-[7px] mb-[7px] border border-2 border-black">
                   <img src="/images/variants/shirt1.png" alt="Shirt 1" />
-                </div>
-                <div className="item mr-[7px] mb-[7px] border border-2 border-black">
-                  <img src="/images/variants/shirt1.png" alt="Shirt 1" />
-                </div>
-                <div className="item mr-[7px] mb-[7px] border border-2 border-black">
-                  <img src="/images/variants/shirt1.png" alt="Shirt 1" />
-                </div>
-                <div className="item mr-[7px] mb-[7px] border border-2 border-black">
-                  <img src="/images/variants/shirt1.png" alt="Shirt 1" />
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="sizes">

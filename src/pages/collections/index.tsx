@@ -8,7 +8,6 @@ import { PrintfulProduct } from "../../types";
 import ProductGrid from "../../components/ProductGrid";
 
 function Collections({ products }) {
-  console.log(products);
   return (
     <>
       <div className="scrollbar border-b border-t border-gray-200">

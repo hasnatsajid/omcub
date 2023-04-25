@@ -77,7 +77,8 @@ function Product({ productData }) {
                   uniqueColors.map((color, i) => (
                     <div
                       key={i}
-                      className={`w-[70px] h-[70px] item mr-[7px] mb-[7px] border border-2 border-black bg-\[${color}\]`}
+                      className={`w-[70px] h-[70px] item mr-[7px] mb-[7px] border border-2 border-black `}
+                      style={{ backgroundColor: `${color}` }}
                     ></div>
                   ))}
 

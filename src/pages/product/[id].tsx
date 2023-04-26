@@ -2,16 +2,48 @@ import { GetStaticProps } from "next";
 import { printful } from "../../lib/printful-client";
 
 import Carousel from "../../components/Carousel";
+import { useEffect, useState } from "react";
 
 function Product({ productData }) {
   const { product, variants } = productData;
+  const initialVariant = variants[0];
+  const [activeVariant, setactiveVariant] = useState({ initialVariant });
   // console.log(product, variants);
+
+  useEffect(() => {
+    setactiveVariant(initialVariant);
+  }, []);
 
   const uniqueColors = Array.from(
     new Set(variants.map((item) => item.color_code))
   );
-  console.log(uniqueColors);
-  // console.log(uniqueColors);
+
+  const variantSizes = variants.filter(
+    (item) => item.color_code === initialVariant.color_code
+  );
+
+  const variantColorToggle = (e) => {
+    console.log(e.target);
+  };
+
+  const variantSizeToggle = (e) => {
+    console.log(e.target);
+  };
+
+  console.log(variants.map((item) => item));
+
+  var map = new Map();
+  console.log(map);
+  let uniqueColorObjects = variants.filter((web) => {
+    if (map.get(web.color_code)) {
+      return false;
+    }
+    map.set(web.color_code, web);
+    return true;
+  });
+
+  console.log(uniqueColorObjects);
+
   // const uniqueColorCodes = [
   //   ...new Set(variants.map((item) => item.color_code)),
   // ];
@@ -73,12 +105,17 @@ function Product({ productData }) {
                 Hinano Dark Navy
               </div>
               <div className="variant_catalogue grid grid-cols-4 gap-2 py-4">
-                {uniqueColors &&
-                  uniqueColors.map((color, i) => (
+                {uniqueColorObjects &&
+                  uniqueColorObjects.map(({ color_code, id }) => (
                     <div
-                      key={i}
-                      className={`w-[70px] h-[70px] item mr-[7px] mb-[7px] border border-2 border-black `}
-                      style={{ backgroundColor: `${color}` }}
+                      key={id}
+                      className={`w-[70px] h-[70px] item mr-[7px] mb-[7px] border ${
+                        initialVariant.color_code === color_code
+                          ? "border-2 border-black"
+                          : ""
+                      }`}
+                      style={{ backgroundColor: `${color_code}` }}
+                      onClick={variantColorToggle}
                     ></div>
                   ))}
 
@@ -93,25 +130,19 @@ function Product({ productData }) {
                 <div className="guide"></div>
               </div>
 
-              <div className="size-list flex justify-between">
-                <div className="box active border-2 px-4 py-3 text-[13px]">
-                  XS
-                </div>
-                <div className="box box border-2 px-4 py-3 text-[13px] w-fit">
-                  S
-                </div>
-                <div className="box box border-2 px-4 py-3 text-[13px] w-fit">
-                  M
-                </div>
-                <div className="box box border-2 px-4 py-3 text-[13px] w-fit">
-                  L
-                </div>
-                <div className="box box border-2 px-4 py-3 text-[13px] w-fit">
-                  XL
-                </div>
-                <div className="box box border-2 px-2 py-3 text-[13px] w-fit">
-                  XXL
-                </div>
+              <div className="size-list flex  flex-wrap">
+                {variantSizes &&
+                  variantSizes.map(({ size, id }) => (
+                    <div
+                      key={id}
+                      className={`box cursor-pointer border-2 px-4 py-3 text-[13px] ${
+                        size === initialVariant.size ? "active" : ""
+                      }`}
+                      onClick={variantSizeToggle}
+                    >
+                      {size}
+                    </div>
+                  ))}
               </div>
             </div>
             <div className="action_btn my-4">

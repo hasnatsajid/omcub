@@ -7,12 +7,33 @@ import { useEffect, useState } from "react";
 function Product({ productData }) {
   const { product, variants } = productData;
   const initialVariant = variants[0];
-  const [activeVariant, setactiveVariant] = useState({ initialVariant });
-  // console.log(product, variants);
+  const [activeVariant, setactiveVariant] = useState({ ...initialVariant });
+  const [variantToggle, setVariantToggle] = useState(false);
+  const [uniqueColorObjects, setUniqueColorObjects] = useState([]);
+  const initialVariantSizes = variants.filter(
+    (variant) => variant.color === activeVariant.color
+  );
+  const [sizeVariants, setSizeVariants] = useState([...initialVariantSizes]);
 
   useEffect(() => {
-    setactiveVariant(initialVariant);
+    setactiveVariant({ ...initialVariant });
+
+    setUniqueColorObjects(
+      variants.filter((web) => {
+        if (map.get(web.color_code)) {
+          return false;
+        }
+        map.set(web.color_code, web);
+        return true;
+      })
+    );
   }, []);
+
+  useEffect(() => {
+    setSizeVariants(
+      variants.filter((variant) => variant.color === activeVariant.color)
+    );
+  }, [variantToggle]);
 
   const uniqueColors = Array.from(
     new Set(variants.map((item) => item.color_code))
@@ -23,31 +44,23 @@ function Product({ productData }) {
   );
 
   const variantColorToggle = (e) => {
-    console.log(e.target);
+    setactiveVariant(
+      variants.filter((variant) => variant.id === +e.target.dataset.id)[0]
+    );
+
+    setVariantToggle((prev) => !prev);
   };
 
   const variantSizeToggle = (e) => {
-    console.log(e.target);
+    // (e.target.dataset.id);
+    setactiveVariant(
+      variants.filter((variant) => variant.id === +e.target.dataset.id)[0]
+    );
+
+    setVariantToggle((prev) => !prev);
   };
 
-  console.log(variants.map((item) => item));
-
   var map = new Map();
-  console.log(map);
-  let uniqueColorObjects = variants.filter((web) => {
-    if (map.get(web.color_code)) {
-      return false;
-    }
-    map.set(web.color_code, web);
-    return true;
-  });
-
-  console.log(uniqueColorObjects);
-
-  // const uniqueColorCodes = [
-  //   ...new Set(variants.map((item) => item.color_code)),
-  // ];
-  // console.log(uniqueColors, uniqueColorCodes);
 
   // const variantImages = variants.map((variant) => variant.image);
 
@@ -94,7 +107,9 @@ function Product({ productData }) {
               <div className="heading font-serif text-[22px] w-3/4">
                 {product.title}
               </div>
-              <div className="price text-xl font-bold">$89</div>
+              <div className="price text-xl font-bold">
+                ${activeVariant.price}
+              </div>
             </div>
             <div className="info text-[13px] border-b border-gray-300 pb-4">
               <div className="category text-[#736b67]">{product.type_name}</div>
@@ -102,15 +117,16 @@ function Product({ productData }) {
             </div>
             <div className="variants my-6">
               <div className="tile text-[13px] text-[#736b67]">
-                Hinano Dark Navy
+                {activeVariant.color}
               </div>
               <div className="variant_catalogue grid grid-cols-4 gap-2 py-4">
                 {uniqueColorObjects &&
                   uniqueColorObjects.map(({ color_code, id }) => (
                     <div
                       key={id}
+                      data-id={id}
                       className={`w-[70px] h-[70px] item mr-[7px] mb-[7px] border ${
-                        initialVariant.color_code === color_code
+                        activeVariant.color_code === color_code
                           ? "border-2 border-black"
                           : ""
                       }`}
@@ -131,7 +147,20 @@ function Product({ productData }) {
               </div>
 
               <div className="size-list flex  flex-wrap">
-                {variantSizes &&
+                {sizeVariants &&
+                  sizeVariants.map(({ size, id }) => (
+                    <div
+                      key={id}
+                      data-id={id}
+                      className={`box cursor-pointer border-2 px-4 py-3 text-[13px] ${
+                        size === activeVariant.size ? "active" : ""
+                      }`}
+                      onClick={variantSizeToggle}
+                    >
+                      {size}
+                    </div>
+                  ))}
+                {/* {variantSizes &&
                   variantSizes.map(({ size, id }) => (
                     <div
                       key={id}
@@ -142,7 +171,7 @@ function Product({ productData }) {
                     >
                       {size}
                     </div>
-                  ))}
+                  ))} */}
               </div>
             </div>
             <div className="action_btn my-4">
@@ -159,14 +188,6 @@ function Product({ productData }) {
     </>
   );
 }
-
-// export async function getStaticPaths() {
-//   return {
-//     paths: [],
-//     // paths: [{ params: { id: "362" } }, { params: { id: "605" } }],
-//     fallback: true,
-//   };
-// }
 
 export const getServerSideProps = async (context) => {
   // const { result: productIds } = await printful.get("sync/products");

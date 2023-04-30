@@ -11,9 +11,9 @@ function Collections({ products, categories }) {
   return (
     <>
       <div className="categories">
-        {/* {categories.map((category) => (
+        {categories.map((category) => (
           <h3 key={category}>{category.title + " " + category.id}</h3>
-        ))} */}
+        ))}
       </div>
 
       <div className="scrollbar border-b border-t border-gray-200">

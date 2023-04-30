@@ -61,10 +61,7 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/6">
-                                  <a
-                                    href="/collections/6"
-                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                  >
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
                                     Shirts
                                   </a>
                                 </Link>

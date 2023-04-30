@@ -7,12 +7,12 @@ import { PrintfulProduct } from "../../types";
 
 import ProductGrid from "../../components/ProductGrid";
 
-function Collections({ products, categories }) {
+function Collections({ products, category }) {
   return (
     <>
       <div className="categories">
         {/* {categories.map((category) => (
-          <h3 key={category}>{category.title + " " + category.id}</h3>
+          <h3 key={category.id}>{category.title + " " + category.id}</h3>
         ))} */}
       </div>
 
@@ -53,7 +53,7 @@ function Collections({ products, categories }) {
           <div className="wrapper mx-auto max-w-[90%]">
             <div className="title text-center py-12">
               <div className="heading text-4xl">
-                <h1 className="font-semibold">All Products</h1>
+                <h1 className="font-semibold">{category.title}</h1>
               </div>
               <div className="sub text-xs text-[#77706c] py-1">
                 There&apos;s a story in every stitch
@@ -170,10 +170,15 @@ function Collections({ products, categories }) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps = async (context) => {
   // const { result: productIds } = await printful.get("sync/products");
-  const { result } = await printful.get("/products");
-  const categories = await printful.get("/categories");
+  const { result } = await printful.get(
+    `/products?category_id=${context.params.id}`
+  );
+  const categoriesResponse = await fetch(
+    `https://api.printful.com/categories/${context.params.id}`
+  );
+  const category = await categoriesResponse.json();
   // const { result } = await printful.get("/products");
   // const { result } = await printful.get("/products?category_id=32");
   // const allProducts = await Promise.all(
@@ -192,7 +197,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       products: result,
-      categories: categories.result.categories,
+      category: category.result.category,
       // products: shuffle(products),
     },
   };

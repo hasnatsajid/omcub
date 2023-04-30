@@ -61,7 +61,7 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/6"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Shirts
@@ -69,7 +69,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/32"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Tees
@@ -85,7 +85,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/7"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Sweatshirts & hoodies
@@ -100,7 +100,7 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/117"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Sports wear
@@ -108,7 +108,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/60"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Skirts
@@ -116,7 +116,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/58"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Shorts
@@ -132,7 +132,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/240"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Pants
@@ -147,7 +147,7 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/16"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Bags
@@ -155,7 +155,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/220"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Shoes
@@ -163,7 +163,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/15"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Hats
@@ -171,7 +171,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/45"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Beanies
@@ -194,7 +194,7 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/32"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   T-shirts
@@ -202,7 +202,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/35"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   All over t-shirt
@@ -210,7 +210,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/31"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Crop tops
@@ -218,7 +218,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/33"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   3/4 sleeve shirts
@@ -226,7 +226,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/96"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Jackets and hoodies
@@ -241,7 +241,7 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/258"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Pillow cases
@@ -249,7 +249,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/255"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Blankets
@@ -264,7 +264,7 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/202"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Stickers
@@ -275,9 +275,12 @@ const Header = ({ setMenuOpen }) => {
                         </div>
                         <div className="mt-6 grid grid-cols-6 gap-6">
                           <div>
-                            <p className="font-bold font-serif text-xl">
-                              Aporns
-                            </p>
+                            <a
+                              href="/collections/88"
+                              className="font-bold font-serif text-xl"
+                            >
+                              Aprons
+                            </a>
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <a
@@ -290,13 +293,16 @@ const Header = ({ setMenuOpen }) => {
                             </ul>
                           </div>
                           <div>
-                            <p className="font-bold font-serif text-xl">
+                            <a
+                              href="/collections/210"
+                              className="font-bold font-serif text-xl"
+                            >
                               Fabrics
-                            </p>
+                            </a>
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/117"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Sports wear
@@ -305,13 +311,16 @@ const Header = ({ setMenuOpen }) => {
                             </ul>
                           </div>
                           <div>
-                            <p className="font-bold font-serif text-xl">
+                            <a
+                              href="/collections/22"
+                              className="font-bold font-serif text-xl"
+                            >
                               Towels
-                            </p>
+                            </a>
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/16"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Bags
@@ -320,13 +329,16 @@ const Header = ({ setMenuOpen }) => {
                             </ul>
                           </div>
                           <div>
-                            <p className="font-bold font-serif text-xl">
+                            <a
+                              href="/collections/189"
+                              className="font-bold font-serif text-xl"
+                            >
                               Pet products
-                            </p>
+                            </a>
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/189"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Dog bandannas
@@ -365,7 +377,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/117"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Sportswear
@@ -373,7 +385,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/119"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Streetwear
@@ -381,7 +393,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/120"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Beachwear
@@ -389,7 +401,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/260"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Halloween
@@ -397,7 +409,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/209"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Back to school
@@ -412,7 +424,7 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/188"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   Best sellers
@@ -420,7 +432,7 @@ const Header = ({ setMenuOpen }) => {
                               </li>
                               <li>
                                 <a
-                                  href="#"
+                                  href="/collections/123"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
                                 >
                                   New arrivals

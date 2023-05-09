@@ -24,6 +24,7 @@
 .snipcart-cart-button--highlight {
   background-image: none;
   @apply bg-blue-600 rounded;
+  background-color: black !important;
 }
 
 .snipcart__box--badge-highlight {

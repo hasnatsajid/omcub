@@ -74,7 +74,7 @@ const Product = (product) => {
         <div className="image">
           {/* <img src="/images/shirt1.webp" alt="Shirt 1" /> */}
           <Image
-            src={product.image}
+            src={product.thumbnail_url}
             width={250}
             height={250}
             alt={`${product.name} ${name}`}
@@ -84,9 +84,9 @@ const Product = (product) => {
         <div className="info flex justify-between border-t border-gray-300 pt-3">
           <Link href={`/product/${product.id}`}>
             <div className="title text-base font-bold font-serif cursor-pointer">
-              {product.title.length > 55
-                ? product.title.substring(0, 55) + "..."
-                : product.title}
+              {product.name.length > 55
+                ? product.name.substring(0, 55) + "..."
+                : product.name}
             </div>
           </Link>
           {/* <div className="price">$89</div> */}

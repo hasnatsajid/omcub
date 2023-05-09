@@ -39,14 +39,16 @@ const Carousel = ({ images }) => {
       <div className="slider-container sm:w-[600px] w-full">
         {images.map((photo) => (
           <div
-            key={photo.id}
+            key={photo.external_id}
             // if the photo is the current photo, show it
             className={
-              images[currentIndex].id === photo.id ? "fade" : "slide fade"
+              images[currentIndex].external_id === photo.external_id
+                ? "fade"
+                : "slide fade"
             }
           >
             <img
-              src={photo.image}
+              src={photo.product.image}
               alt={photo.title || photo.name}
               className="photo"
             />

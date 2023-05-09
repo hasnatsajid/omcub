@@ -3,36 +3,137 @@ import { printful } from "../../lib/printful-client";
 
 import Carousel from "../../components/Carousel";
 import { useEffect, useState } from "react";
+import Scrollbar from "../../components/Scrollbar";
 
-function Product({ productData }) {
-  const { product, variants } = productData;
+function Product({ productData, product }) {
+  const { sync_product, sync_variants } = product;
+  // return <h1>fdfd</h1>;
+
+  // const { variants } = productData;
+  const variants = sync_variants;
+
+  // console.log("sync variants", sync_variants);
+
   const initialVariant = variants[0];
+  const [allVariants, setAllVariants] = useState([]);
   const [activeVariant, setactiveVariant] = useState({ ...initialVariant });
   const [variantToggle, setVariantToggle] = useState(false);
   const [uniqueColorObjects, setUniqueColorObjects] = useState([]);
-  const initialVariantSizes = variants.filter(
-    (variant) => variant.color === activeVariant.color
+  const [uniqueColorsArray, setUniqueColorsArray] = useState([]);
+  const [activeVariantExternalId, setActiveVariantExternalId] = useState();
+  const [activeVariantFile, setActiveVariantFile] = useState(
+    activeVariant.files.find(({ type }) => type === "preview")
   );
-  const [sizeVariants, setSizeVariants] = useState([...initialVariantSizes]);
+  // const initialVariantSizes = allVariants.filter(
+  //   (variant) => variant.color === activeVariant.color
+  // );
+  const [sizeVariants, setSizeVariants] = useState([]);
 
   useEffect(() => {
     setactiveVariant({ ...initialVariant });
 
-    setUniqueColorObjects(
-      variants.filter((web) => {
-        if (map.get(web.color_code)) {
+    let sizes = [];
+    let splittedVariantsArray;
+    const newVariants = [];
+
+    // setUniqueColorObjects(
+    setUniqueColorsArray(
+      variants.filter((variant) => {
+        splittedVariantsArray = variant.name.split(" ");
+        sizes.push(splittedVariantsArray[splittedVariantsArray.length - 1]);
+
+        const nameCutted = variant.name
+          .substring(variant.name.indexOf("-") + 1)
+          .trim();
+        const color = nameCutted
+          .substring(0, nameCutted.lastIndexOf("/"))
+          .trim();
+        // colors.push(nameCutted.substring(0, nameCutted.lastIndexOf("/")));
+        variant = { ...variant, color };
+        newVariants.push(variant);
+
+        if (map.get(variant.color)) {
+          // if (map.get(variant.color_code)) {
           return false;
         }
-        map.set(web.color_code, web);
+        map.set(variant.color, variant);
         return true;
       })
     );
+    // );
+
+    setAllVariants([...newVariants]);
+    setactiveVariant(newVariants[0]);
   }, []);
 
   useEffect(() => {
     setSizeVariants(
-      variants.filter((variant) => variant.color === activeVariant.color)
+      allVariants.filter((variant) => variant.color === activeVariant.color)
     );
+
+    setActiveVariantExternalId(activeVariant.external_id);
+    setActiveVariantFile(
+      activeVariant.files.find(({ type }) => type === "preview")
+    );
+
+    // console.log(activeVariant, activeVariantFile.preview_url);
+  }, [activeVariant]);
+
+  useEffect(() => {
+    // console.log(activeVariantFile);
+  }, [activeVariantFile]);
+
+  useEffect(() => {
+    let sizes = [];
+    let splittedVariantsArray;
+    const newVariants = [];
+
+    const uniqueColorIds = variants
+      .filter((variant) => {
+        splittedVariantsArray = variant.name.split(" ");
+        sizes.push(splittedVariantsArray[splittedVariantsArray.length - 1]);
+
+        const nameCutted = variant.name
+          .substring(variant.name.indexOf("-") + 1)
+          .trim();
+        const color = nameCutted
+          .substring(0, nameCutted.lastIndexOf("/"))
+          .trim();
+        // colors.push(nameCutted.substring(0, nameCutted.lastIndexOf("/")));
+        variant = { ...variant, color };
+        newVariants.push(variant);
+
+        if (map.get(variant.color)) {
+          // if (map.get(variant.color_code)) {
+          return false;
+        }
+        map.set(variant.color, variant);
+        return true;
+      })
+      .map((el) => el.id);
+
+    setUniqueColorsArray(
+      allVariants.filter((element, i) => uniqueColorIds.includes(element.id))
+    );
+
+    // console.log(
+    //   uniqueColorIds,
+    //   uniqueColorsArray,
+    //   allVariants.filter((element, i) => uniqueColorIds.includes(element.id))
+    // );
+  }, [allVariants]);
+
+  useEffect(() => {
+    setSizeVariants(
+      allVariants.filter((variant) => {
+        return variant.color === activeVariant.color;
+      })
+    );
+
+    // setactiveVariant();
+
+    // console.log("Active", activeVariant);
+    // console.log("all variants", allVariants);
   }, [variantToggle]);
 
   const uniqueColors = Array.from(
@@ -44,17 +145,23 @@ function Product({ productData }) {
   );
 
   const variantColorToggle = (e) => {
+    // console.log(e.target.dataset.id);
+
+    // return;
     setactiveVariant(
-      variants.filter((variant) => variant.id === +e.target.dataset.id)[0]
+      allVariants.filter((variant) => variant.id === +e.target.dataset.id)[0]
     );
+
+    // console.log(activeVariant.files.find(({ type }) => type === "preview"));
 
     setVariantToggle((prev) => !prev);
   };
 
   const variantSizeToggle = (e) => {
-    // (e.target.dataset.id);
+    // console.log(e.target.dataset.id);
+    // return;
     setactiveVariant(
-      variants.filter((variant) => variant.id === +e.target.dataset.id)[0]
+      allVariants.filter((variant) => variant.id === +e.target.dataset.id)[0]
     );
 
     setVariantToggle((prev) => !prev);
@@ -66,49 +173,19 @@ function Product({ productData }) {
 
   return (
     <>
-      <div className="scrollbar border-b border-t border-gray-200">
-        <div className="px-4">
-          <div className="flex py-4 overflow-scroll">
-            <div className="category active">
-              <button className="text-white bg-[#f15a31] px-4 py-2 text-sm rounded mr-2 w-max">
-                Shop All
-              </button>
-            </div>
-            <div className="category">
-              <button className="border border-[#d3c7c1] px-4 py-2 text-sm rounded mr-2 w-max">
-                Short Sleeve
-              </button>
-            </div>
-            <div className="category">
-              <button className="border border-[#d3c7c1] px-4 py-2 text-sm rounded mr-2 w-max">
-                Long Sleeve
-              </button>
-            </div>
-            <div className="category">
-              <button className="border border-[#d3c7c1] px-4 py-2 text-sm rounded mr-2 w-max">
-                Sleeveless
-              </button>
-            </div>
-            <div className="category">
-              <button className="border border-[#d3c7c1] px-4 py-2 text-sm rounded mr-2 w-max">
-                Tees
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Scrollbar />
       <div className="product bg-[#f9f9f9]">
         <div className="wrapper lg:flex w-4/5 m-auto ">
           <div className="carousel flex-1">
-            <Carousel images={variants} />
+            <Carousel images={uniqueColorsArray} />
           </div>
           <div className="product_form 2xl:w-3/12 md:w-2/6">
             <div className="title flex justify-between pt-6 pb-2 items-start">
               <div className="heading font-serif text-[22px] w-3/4">
-                {product.title}
+                {sync_product.name}
               </div>
               <div className="price text-xl font-bold">
-                ${activeVariant.price}
+                ${activeVariant && activeVariant.retail_price}
               </div>
             </div>
             <div className="info text-[13px] border-b border-gray-300 pb-4">
@@ -117,23 +194,40 @@ function Product({ productData }) {
             </div>
             <div className="variants my-6">
               <div className="tile text-[13px] text-[#736b67]">
-                {activeVariant.color}
+                {activeVariant && activeVariant.color}
               </div>
               <div className="variant_catalogue grid grid-cols-4 gap-2 py-4">
-                {uniqueColorObjects &&
-                  uniqueColorObjects.map(({ color_code, id }) => (
-                    <div
-                      key={id}
-                      data-id={id}
-                      className={`w-[70px] h-[70px] item mr-[7px] mb-[7px] border ${
-                        activeVariant.color_code === color_code
-                          ? "border-2 border-black"
-                          : ""
-                      }`}
-                      style={{ backgroundColor: `${color_code}` }}
-                      onClick={variantColorToggle}
-                    ></div>
-                  ))}
+                {uniqueColorsArray &&
+                  activeVariant &&
+                  uniqueColorsArray.map(({ color, id, product }) => {
+                    // console.log("id and color ", id, color, product.image);
+                    return (
+                      <div
+                        key={id}
+                        data-id={id}
+                        className={`w-[70px] h-[auto] item mr-[7px] mb-[7px] border ${
+                          // className={`w-[70px] h-[70px] item mr-[7px] mb-[7px] border ${
+                          activeVariant.color === color
+                            ? "border-2 border-black"
+                            : ""
+                        }`}
+                        style={{
+                          backgroundImage: `url(${product.image})`,
+                          height: "5rem",
+                          backgroundSize: "contain",
+                          backgroundRepeat: "no-repeat",
+                          backgroundAttachment: "inherit",
+                          backgroundPosition: "center",
+                        }}
+                        onClick={variantColorToggle}
+                      >
+                        {/* <div className="item ">
+                          <img src={product.image} alt="Shirt 1" />
+                        </div> */}
+                        {/* {color} */}
+                      </div>
+                    );
+                  })}
 
                 {/* <div className="item mr-[7px] mb-[7px] border border-2 border-black">
                   <img src="/images/variants/shirt1.png" alt="Shirt 1" />
@@ -148,36 +242,50 @@ function Product({ productData }) {
 
               <div className="size-list flex  flex-wrap">
                 {sizeVariants &&
-                  sizeVariants.map(({ size, id }) => (
-                    <div
-                      key={id}
-                      data-id={id}
-                      className={`box cursor-pointer border-2 px-4 py-3 text-[13px] ${
-                        size === activeVariant.size ? "active" : ""
-                      }`}
-                      onClick={variantSizeToggle}
-                    >
-                      {size}
-                    </div>
-                  ))}
-                {/* {variantSizes &&
-                  variantSizes.map(({ size, id }) => (
-                    <div
-                      key={id}
-                      className={`box cursor-pointer border-2 px-4 py-3 text-[13px] ${
-                        size === initialVariant.size ? "active" : ""
-                      }`}
-                      onClick={variantSizeToggle}
-                    >
-                      {size}
-                    </div>
-                  ))} */}
+                  sizeVariants.map(({ size, id, name }) => {
+                    const splittedVariantsArray = name.split(" ");
+                    const splittedVariantsArrayActive =
+                      activeVariant.name.split(" ");
+
+                    return (
+                      <div
+                        key={id}
+                        data-id={id}
+                        className={`box cursor-pointer border-2 px-4 py-3 text-[13px] ${
+                          activeVariant &&
+                          splittedVariantsArrayActive[
+                            splittedVariantsArrayActive.length - 1
+                          ] ===
+                            splittedVariantsArray[
+                              splittedVariantsArray.length - 1
+                            ]
+                            ? "active"
+                            : ""
+                        }`}
+                        onClick={variantSizeToggle}
+                      >
+                        {
+                          splittedVariantsArray[
+                            splittedVariantsArray.length - 1
+                          ]
+                        }
+                      </div>
+                    );
+                  })}
               </div>
             </div>
             <div className="action_btn my-4">
               <button
                 type="submit"
-                className="bg-[#f15a31] hover:bg-black text-white w-full py-3 duration-200 hover:ease-out"
+                className="snipcart-add-item bg-[#f15a31] hover:bg-black text-white w-full py-3 duration-200 hover:ease-out"
+                data-item-id={activeVariantExternalId}
+                data-item-price={activeVariant.retail_price}
+                data-item-url={`/api/products/${activeVariantExternalId}`}
+                data-item-description={activeVariant.name}
+                data-item-image={
+                  activeVariantFile && activeVariantFile.preview_url
+                }
+                data-item-name={activeVariant.name}
               >
                 ADD TO CART
               </button>
@@ -192,6 +300,19 @@ function Product({ productData }) {
 export const getServerSideProps = async (context) => {
   // const { result: productIds } = await printful.get("sync/products");
   // const { result } = await printful.get(`/products/362`);
+
+  const productResponse = await fetch(
+    `https://api.printful.com/store/products/${context.params.id}`,
+    {
+      headers: {
+        Authorization: "Bearer WMrkZspe4PkOWW3Jy76VVWdJ6fkagMd9XOst78mI",
+      },
+    }
+  );
+  const product = await productResponse.json();
+
+  // console.log(product);
+
   const response = await fetch(
     `https://api.printful.com/products/${context.params.id}`
   );
@@ -215,6 +336,7 @@ export const getServerSideProps = async (context) => {
 
   return {
     props: {
+      product: product.result,
       productData: result,
       // products: shuffle(products),
     },

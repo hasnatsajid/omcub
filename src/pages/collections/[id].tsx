@@ -8,6 +8,8 @@ import { PrintfulProduct } from "../../types";
 import ProductGrid from "../../components/ProductGrid";
 
 function Collections({ products, category }) {
+  // return <h1>df</h1>;
+
   return (
     <>
       <div className="categories">
@@ -54,6 +56,7 @@ function Collections({ products, category }) {
             <div className="title text-center py-12">
               <div className="heading text-4xl">
                 <h1 className="font-semibold">{category.title}</h1>
+                {/* <h1 className="font-semibold">{category.title}</h1> */}
               </div>
               <div className="sub text-xs text-[#77706c] py-1">
                 There&apos;s a story in every stitch
@@ -172,9 +175,16 @@ function Collections({ products, category }) {
 
 export const getServerSideProps = async (context) => {
   // const { result: productIds } = await printful.get("sync/products");
-  const { result } = await printful.get(
-    `/products?category_id=${context.params.id}`
+  const productResponse = await fetch(
+    `https://api.printful.com/store/products?category_id=${context.params.id}`,
+    {
+      headers: {
+        Authorization: "Bearer WMrkZspe4PkOWW3Jy76VVWdJ6fkagMd9XOst78mI",
+      },
+    }
   );
+  const products = await productResponse.json();
+
   const categoriesResponse = await fetch(
     `https://api.printful.com/categories/${context.params.id}`
   );
@@ -196,7 +206,8 @@ export const getServerSideProps = async (context) => {
 
   return {
     props: {
-      products: result,
+      allProducts: products,
+      products: products.result,
       category: category.result.category,
       // products: shuffle(products),
     },

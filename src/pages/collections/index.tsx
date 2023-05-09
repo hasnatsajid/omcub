@@ -1,19 +1,19 @@
-import { GetStaticProps } from "next";
+// import { GetStaticProps } from "next";
 // import shuffle from "lodash.shuffle";
 
 import { printful } from "../../lib/printful-client";
-import { formatVariantName } from "../../lib/format-variant-name";
-import { PrintfulProduct } from "../../types";
+// import { formatVariantName } from "../../lib/format-variant-name";
+// import { PrintfulProduct } from "../../types";
 
 import ProductGrid from "../../components/ProductGrid";
 
-function Collections({ products, categories }) {
+function Collections({ products }) {
   return (
     <>
       <div className="categories">
-        {categories.map((category) => (
+        {/* {categories.map((category) => (
           <h3 key={category}>{category.title + " " + category.id}</h3>
-        ))}
+        ))} */}
       </div>
 
       <div className="scrollbar border-b border-t border-gray-200">
@@ -170,10 +170,10 @@ function Collections({ products, categories }) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   // const { result: productIds } = await printful.get("sync/products");
   const { result } = await printful.get("/products");
-  const categories = await printful.get("/categories");
+  // const categories = await printful.get("/categories");
   // const { result } = await printful.get("/products");
   // const { result } = await printful.get("/products?category_id=32");
   // const allProducts = await Promise.all(
@@ -192,7 +192,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       products: result,
-      categories: categories.result.categories,
+      // categories: categories.result.categories,
       // products: shuffle(products),
     },
   };

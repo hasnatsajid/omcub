@@ -71,16 +71,18 @@ const Product = (product) => {
           </button>
         </div>
 
-        <div className="image">
-          {/* <img src="/images/shirt1.webp" alt="Shirt 1" /> */}
-          <Image
-            src={product.thumbnail_url}
-            width={250}
-            height={250}
-            alt={`${product.name} ${name}`}
-            title={`${product.name} ${name}`}
-          />
-        </div>
+        <Link href={`/product/${product.id}`}>
+          <div className="image cursor-pointer">
+            {/* <img src="/images/shirt1.webp" alt="Shirt 1" /> */}
+            <Image
+              src={product.thumbnail_url}
+              width={250}
+              height={250}
+              alt={`${product.name} ${name}`}
+              title={`${product.name} ${name}`}
+            />
+          </div>
+        </Link>
         <div className="info flex justify-between border-t border-gray-300 pt-3">
           <Link href={`/product/${product.id}`}>
             <div className="title text-base font-bold font-serif cursor-pointer">

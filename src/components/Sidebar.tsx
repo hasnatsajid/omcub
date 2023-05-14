@@ -13,167 +13,165 @@ const Sidebar = ({ setMenuOpen }) => {
       <div className="menu-items w-5/6 mx-auto my-6">
         <div className="menu-item my-4">
           <div className="item font-serif font-bold">
-            <Link href="/">Tops</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Shirts</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">Tees</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">Knits</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">Sweatshirts & hoodies</Link>
-          </div>
-        </div>
-        <div className="menu-item my-4">
-          <div className="item font-serif font-bold">
-            <Link href="/">Bottoms</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Sports wear</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">Skirts</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">Shorts</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">Boardshorts</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">Pants</Link>
-          </div>
-        </div>
-        <div className="menu-item my-4">
-          <div className="item font-serif font-bold">
-            <Link href="/">Accessories</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Bags</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">Shoes</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">Hats</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">Beanies</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">Gear</Link>
-          </div>
-        </div>
-        <div className="menu-item my-4">
-          <div className="item font-serif font-bold">
-            <Link href="/">Women</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">T-shirts</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">All over t-shirt</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">Crop tops</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">3/4 sleeve shirts</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">Jackets and hoodies</Link>
-          </div>
-        </div>
-        <div className="menu-item my-4">
-          <div className="item font-serif font-bold">
-            <Link href="/">Home decor</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Pillow cases</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="/">Blankets</Link>
-          </div>
-        </div>
-        <div className="menu-item my-4">
-          <div className="item font-serif font-bold">
-            <Link href="/">Stationery</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Stickers</Link>
-          </div>
-        </div>
-        <div className="menu-item my-4">
-          <div className="item font-serif font-bold">
-            <Link href="/">Aporns</Link>
-          </div>
-        </div>
-        <div className="menu-item my-4">
-          <div className="item font-serif font-bold">
-            <Link href="/">Fabrics</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Sports wear</Link>
-          </div>
-        </div>
-        <div className="menu-item my-4">
-          <div className="item font-serif font-bold">
-            <Link href="/">Towels</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Bags</Link>
-          </div>
-        </div>
-        <div className="menu-item my-4">
-          <div className="item font-serif font-bold">
-            <Link href="/">Pet products</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Dog food</Link>
-          </div>
-        </div>
-        <div className="menu-item my-4">
-          <div className="item font-serif font-bold">
-            <Link href="/">Collections</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Best sellers</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Premium products</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Fall & winter</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Sportswear</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Streetwear</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Beachwear</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Halloween</Link>
-          </div>
-          <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Back to school</Link>
-          </div>
-        </div>
-        <div className="menu-item my-4">
-          <div className="item font-serif font-bold">
             <Link href="/">Featured</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">Best sellers</Link>
+            <Link href="/collections/188">Best sellers</Link>
           </div>
           <div className="sub-item ml-4 text-gray-600 font-normal">
-            <Link href="">New arrivals</Link>
+            <Link href="/collections/123">New arrivals</Link>
+          </div>
+        </div>
+        <div className="menu-item my-4">
+          <div className="item font-serif font-bold">
+            <Link href="/">Tops</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/6">Shirts</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/7">Hoodies & Jackets</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/27">All-over shirts</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/85">Embroidered shirts</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/117">Sportswear</Link>
+          </div>
+        </div>
+        <div className="menu-item my-4">
+          <div className="item font-serif font-bold">
+            <Link href="/collections/107">Bottoms</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/117">Sports wear</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/58">Shorts</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="#">Boardshorts</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/240">Pants</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/125">Underwear</Link>
+          </div>
+        </div>
+        <div className="menu-item my-4">
+          <div className="item font-serif font-bold">
+            <Link href="/collections/4">Accessories</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/16">Bags</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/205">Footwear</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/15">Hats</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/45">Beanies</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="#">Gear</Link>
+          </div>
+        </div>
+        <div className="menu-item my-4">
+          <div className="item font-serif font-bold">
+            <Link href="/collections/112">Drinkware & coasters</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/191">Water bottles</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/195">Mugs</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/238">Tumblers</Link>
+          </div>
+        </div>
+        <div className="menu-item my-4">
+          <div className="item font-serif font-bold">
+            <Link href="/collections/21">Wall Art</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/202">Stickers</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/55">Posters</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/57">Canvas prints</Link>
+          </div>
+        </div>
+        <div className="menu-item my-4">
+          <div className="item font-serif font-bold">
+            <Link href="/collections/243">Tech accessories</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/244">Phones cases</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/250">Laptop cases</Link>
+          </div>
+        </div>
+        <div className="menu-item my-4">
+          <div className="item font-serif font-bold">
+            <Link href="/">Kids & Youth</Link>
+          </div>
+        </div>
+        <div className="menu-item my-4">
+          <div className="item font-serif font-bold">
+            <Link href="/collections/252">Home decor</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/258">Pillow cases</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/255">Blankets</Link>
+          </div>
+        </div>
+        <div className="menu-item my-4">
+          <div className="item font-serif font-bold">
+            <Link href="#">Collections</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/188">Best sellers</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="#">Pickleball</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/223">Premium products</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/144">Fall & winter</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/117">Sportswear</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/119">Streetwear</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/120">Beachwear</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/260">Halloween</Link>
+          </div>
+          <div className="sub-item ml-4 text-gray-600 font-normal">
+            <Link href="/collections/209">Back to school</Link>
+          </div>
+        </div>
+        <div className="menu-item my-4">
+          <div className="item font-serif font-bold">
+            <Link href="/collections/226">Shop All Mens</Link>
           </div>
         </div>
       </div>

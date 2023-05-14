@@ -283,7 +283,8 @@ function Product({ productData, product }) {
                 data-item-url={`/api/products/${activeVariantExternalId}`}
                 data-item-description={activeVariant.name}
                 data-item-image={
-                  activeVariantFile && activeVariantFile.preview_url
+                  activeVariant && activeVariant.product.image
+                  // activeVariantFile && activeVariantFile.preview_url
                 }
                 data-item-name={activeVariant.name}
               >

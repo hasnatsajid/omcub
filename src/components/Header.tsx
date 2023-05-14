@@ -43,11 +43,11 @@ const Header = ({ setMenuOpen }) => {
             </Link>
           </div>
           <div className="md:w-1/3 hidden sm:block">
-            <nav>
+            <nav className="flex justify-center">
               <ul className="flex items-center justify-center font-semibold">
                 <li className="group px-3 py-2">
                   <button className="hover:opacity-50 cursor-default">
-                    Categories
+                    Men
                   </button>
                   <div className="absolute top-[7%] left-0 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[100%] transform">
                     {/* <div className="absolute top-0 -left-48 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[560px] transform"> */}
@@ -55,7 +55,30 @@ const Header = ({ setMenuOpen }) => {
                       <div className="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12.65rem] duration-500 ease-in-out rounded-sm"></div>
 
                       <div className="relative z-10">
-                        <div className="mt-6 grid grid-cols-6 gap-6">
+                        <div className="mt-6 grid grid-cols-8 gap-2">
+                          <div>
+                            <Link href="#">
+                              <a className="font-bold font-serif text-xl">
+                                Featured
+                              </a>
+                            </Link>
+                            <ul className="mt-3 text-[15px]">
+                              <li>
+                                <Link href="/collections/188">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Best sellers
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/123">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    New arrivals
+                                  </a>
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
                           <div>
                             <p className="font-bold font-serif text-xl">Tops</p>
                             <ul className="mt-3 text-[15px]">
@@ -67,23 +90,30 @@ const Header = ({ setMenuOpen }) => {
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/collections/32">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
-                                    Tees
-                                  </a>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href="/collections/32">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
-                                    Knits
-                                  </a>
-                                </Link>
-                              </li>
-                              <li>
                                 <Link href="/collections/7">
                                   <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
-                                    Sweatshirts & hoodies
+                                    Hoodies & Jackets
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/27">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    All-over shirts
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/85">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Embroidered shirts
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/117">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Sportswear
                                   </a>
                                 </Link>
                               </li>
@@ -100,13 +130,6 @@ const Header = ({ setMenuOpen }) => {
                                 <Link href="/collections/117">
                                   <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
                                     Sports wear
-                                  </a>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href="/collections/60">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
-                                    Skirts
                                   </a>
                                 </Link>
                               </li>
@@ -132,6 +155,13 @@ const Header = ({ setMenuOpen }) => {
                                   </a>
                                 </Link>
                               </li>
+                              <li>
+                                <Link href="/collections/125">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Underwear
+                                  </a>
+                                </Link>
+                              </li>
                             </ul>
                           </div>
                           <div>
@@ -149,9 +179,9 @@ const Header = ({ setMenuOpen }) => {
                                 </Link>
                               </li>
                               <li>
-                                <Link href="/collections/220">
+                                <Link href="/collections/205">
                                   <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
-                                    Shoes
+                                    Footwear
                                   </a>
                                 </Link>
                               </li>
@@ -179,11 +209,241 @@ const Header = ({ setMenuOpen }) => {
                             </ul>
                           </div>
                           <div>
-                            <Link href="/collections/227">
+                            <Link href="/collections/112">
                               <a className="font-bold font-serif text-xl">
-                                Women
+                                Drinkware & coasters
                               </a>
                             </Link>
+                            <ul className="mt-3 text-[15px]">
+                              <li>
+                                <Link href="/collections/191">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Water bottles
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/195">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Mugs
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/238">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Tumblers
+                                  </a>
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
+                          <div>
+                            <Link href="/collections/21">
+                              <a className="font-bold font-serif text-xl">
+                                Wall Art
+                              </a>
+                            </Link>
+                            <ul className="mt-3 text-[15px]">
+                              <li>
+                                <Link href="/collections/202">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Stickers
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/55">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Posters
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/57">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Canvas prints
+                                  </a>
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
+                          <div>
+                            <Link href="/collections/243">
+                              <a className="font-bold font-serif text-xl">
+                                Tech accessories
+                              </a>
+                            </Link>
+                            <ul className="mt-3 text-[15px]">
+                              <li>
+                                <Link href="/collections/244">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Phones cases
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/250">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Laptop cases
+                                  </a>
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
+                          <div>
+                            <Link href="/collections/228">
+                              <a className="font-bold font-serif text-xl">
+                                Kids & Youth
+                              </a>
+                            </Link>
+                          </div>
+                        </div>
+                        <div className="mt-6 grid grid-cols-6 gap-6">
+                          <div>
+                            <Link href="/collections/252">
+                              <a className="font-bold font-serif text-xl">
+                                Home decor
+                              </a>
+                            </Link>
+                            <ul className="mt-3 text-[15px]">
+                              <li>
+                                <Link href="/collections/258">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Pillow cases
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/255">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Blankets
+                                  </a>
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
+                          <div>
+                            <p className="font-bold font-serif text-xl">
+                              Collections
+                            </p>
+                            <ul className="mt-3 text-[15px]">
+                              <li>
+                                <Link href="/collections/188">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Best sellers
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="#">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Pickleball
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/223">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Premium products
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/144">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Fall & winter
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/117">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Sportswear
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/119">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Streetwear
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/120">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Beachwear
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/260">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Halloween
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/209">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Back to school
+                                  </a>
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
+                          {/* <div>
+                            <Link href="#">
+                              <a className="font-bold font-serif text-xl">
+                                Featured
+                              </a>
+                            </Link>
+                            <ul className="mt-3 text-[15px]">
+                              <li>
+                                <Link href="/collections/188">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Best sellers
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/123">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    New arrivals
+                                  </a>
+                                </Link>
+                              </li>
+                            </ul>
+                          </div> */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                {/* <li className="relative group px-3 py-2">
+          <a href="#" className="hover:opacity-50 cursor-default">
+            Pricing
+          </a>
+        </li> */}
+              </ul>
+              <ul className="flex items-center justify-center font-semibold">
+                <li className="group px-3 py-2">
+                  <button className="hover:opacity-50 cursor-default">
+                    Women
+                  </button>
+                  <div className="absolute top-[7%] left-0 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[100%] transform">
+                    {/* <div className="absolute top-0 -left-48 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[560px] transform"> */}
+                    <div className="relative top-12 p-6 bg-white rounded-xl shadow-xl w-full h-screen">
+                      <div className="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12.65rem] duration-500 ease-in-out rounded-sm"></div>
+
+                      <div className="relative z-10">
+                        <div className="mt-6 grid grid-cols-8 gap-2">
+                          <div>
+                            {/* <p className="font-bold font-serif text-xl">
+                              Girl Tops
+                            </p> */}
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/32">
@@ -214,13 +474,211 @@ const Header = ({ setMenuOpen }) => {
                                 </Link>
                               </li>
                               <li>
+                                <Link href="/collections/34">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    long sleeve shirts
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
                                 <Link href="/collections/96">
                                   <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
-                                    Jackets and hoodies
+                                    Hoodies & Jackets
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/117">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Sportswear
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/60">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Skirts
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/11">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Dresses
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/58">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Shorts
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/240">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Pants
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/100">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Swimwear
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/125">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Under wear
                                   </a>
                                 </Link>
                               </li>
                             </ul>
+                          </div>
+
+                          <div>
+                            <Link href="/collections/4">
+                              <a className="font-bold font-serif text-xl">
+                                Accessories
+                              </a>
+                            </Link>
+                            <ul className="mt-3 text-[15px]">
+                              <li>
+                                <Link href="/collections/16">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Bags & beauty
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/205">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Footwear
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/15">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Hats
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/45">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Beanies
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="#">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Gear
+                                  </a>
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
+                          <div>
+                            <Link href="/collections/112">
+                              <a className="font-bold font-serif text-xl">
+                                Drinkware & coasters
+                              </a>
+                            </Link>
+                            <ul className="mt-3 text-[15px]">
+                              <li>
+                                <Link href="/collections/191">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Water bottles
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/195">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Mugs
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/238">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Tumblers
+                                  </a>
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
+                          <div>
+                            <Link href="/collections/21">
+                              <a className="font-bold font-serif text-xl">
+                                Wall Art
+                              </a>
+                            </Link>
+                            <ul className="mt-3 text-[15px]">
+                              <li>
+                                <Link href="/collections/202">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Stickers
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/55">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Posters
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/57">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Canvas prints
+                                  </a>
+                                </Link>
+                              </li>
+                              {/* <li>
+                                <Link href="#">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Acrylic blocks
+                                  </a>
+                                </Link>
+                              </li> */}
+                            </ul>
+                          </div>
+                          <div>
+                            <Link href="/collections/243">
+                              <a className="font-bold font-serif text-xl">
+                                Tech accessories
+                              </a>
+                            </Link>
+                            <ul className="mt-3 text-[15px]">
+                              <li>
+                                <Link href="/collections/244">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Phones cases
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/250">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Laptop cases
+                                  </a>
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
+                          <div>
+                            <Link href="/collections/228">
+                              <a className="font-bold font-serif text-xl">
+                                Kids & Youth
+                              </a>
+                            </Link>
                           </div>
                           <div>
                             <Link href="/collections/252">
@@ -243,85 +701,126 @@ const Header = ({ setMenuOpen }) => {
                                   </a>
                                 </Link>
                               </li>
+                              <li>
+                                <Link href="#">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Duvet covers
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/45">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Bean bags
+                                  </a>
+                                </Link>
+                              </li>
                             </ul>
                           </div>
                           <div>
-                            <Link href="/collections/190">
-                              <a className="font-bold font-serif text-xl">
-                                Stationery
-                              </a>
-                            </Link>
+                            <p className="font-bold font-serif text-xl">
+                              Collections
+                            </p>
                             <ul className="mt-3 text-[15px]">
                               <li>
-                                <Link href="/collections/202">
+                                <Link href="/collections/188">
                                   <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
-                                    Stickers
+                                    Best sellers
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="#">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Pickleball
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/223">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Premium products
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/144">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Fall & winter
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/117">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Sportswear
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/119">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Streetwear
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/120">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Beachwear
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/260">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Halloween
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/209">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                    Back to school
                                   </a>
                                 </Link>
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div className="mt-6 grid grid-cols-6 gap-6">
+                        <div className="mt-6 grid grid-cols-1 gap-6 text-center">
                           <div>
-                            <Link href="/collections/88">
+                            <Link href="/collections/227">
                               <a className="font-bold font-serif text-xl">
-                                Aprons
+                                Shop All Women’s
+                              </a>
+                            </Link>
+                          </div>
+                          {/* <div>
+                            <Link href="/collections/252">
+                              <a className="font-bold font-serif text-xl">
+                                Home decor
                               </a>
                             </Link>
                             <ul className="mt-3 text-[15px]">
                               <li>
-                                <Link href="#">
+                                <Link href="/collections/258">
                                   <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
-                                    {/* Shirts */}
+                                    Pillow cases
                                   </a>
                                 </Link>
                               </li>
-                            </ul>
-                          </div>
-                          <div>
-                            <Link href="/collections/210">
-                              <a className="font-bold font-serif text-xl">
-                                Fabrics
-                              </a>
-                            </Link>
-                            <ul className="mt-3 text-[15px]">
                               <li>
-                                <Link href="/collections/117">
+                                <Link href="/collections/255">
                                   <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
-                                    Sports wear
+                                    Blankets
                                   </a>
                                 </Link>
                               </li>
-                            </ul>
-                          </div>
-                          <div>
-                            <Link href="/collections/22">
-                              <a className="font-bold font-serif text-xl">
-                                Towels
-                              </a>
-                            </Link>
-                            <ul className="mt-3 text-[15px]">
                               <li>
-                                <Link href="/collections/16">
+                                <Link href="/collections/45">
                                   <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
-                                    Bags
-                                  </a>
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-                          <div>
-                            <Link href="/collections/189">
-                              <a className="font-bold font-serif text-xl">
-                                Pet products
-                              </a>
-                            </Link>
-                            <ul className="mt-3 text-[15px]">
-                              <li>
-                                <Link href="/collections/189">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
-                                    Dog bandannas
+                                    Bean bags
                                   </a>
                                 </Link>
                               </li>
@@ -389,30 +888,7 @@ const Header = ({ setMenuOpen }) => {
                                 </Link>
                               </li>
                             </ul>
-                          </div>
-                          <div>
-                            <Link href="#">
-                              <a className="font-bold font-serif text-xl">
-                                Featured
-                              </a>
-                            </Link>
-                            <ul className="mt-3 text-[15px]">
-                              <li>
-                                <Link href="/collections/188">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
-                                    Best sellers
-                                  </a>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href="/collections/123">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
-                                    New arrivals
-                                  </a>
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>

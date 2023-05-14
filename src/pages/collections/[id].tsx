@@ -7,16 +7,18 @@ import { PrintfulProduct } from "../../types";
 
 import ProductGrid from "../../components/ProductGrid";
 
-function Collections({ products, category }) {
+function Collections({ products, category, categories }) {
   // return <h1>df</h1>;
+  const categoriesLists = categories;
+  // return <h1></h1>;
 
   return (
     <>
-      <div className="categories">
-        {/* {categories.map((category) => (
+      {/* <div className="categories">
+        {categoriesLists.categories.map((category) => (
           <h3 key={category.id}>{category.title + " " + category.id}</h3>
-        ))} */}
-      </div>
+        ))}
+      </div> */}
 
       <div className="scrollbar border-b border-t border-gray-200">
         <div className="px-4">
@@ -189,6 +191,9 @@ export const getServerSideProps = async (context) => {
     `https://api.printful.com/categories/${context.params.id}`
   );
   const category = await categoriesResponse.json();
+
+  const categoriesList = await fetch(`https://api.printful.com/categories`);
+  const categories = await categoriesList.json();
   // const { result } = await printful.get("/products");
   // const { result } = await printful.get("/products?category_id=32");
   // const allProducts = await Promise.all(
@@ -209,6 +214,7 @@ export const getServerSideProps = async (context) => {
       allProducts: products,
       products: products.result,
       category: category.result.category,
+      categories: categories.result,
       // products: shuffle(products),
     },
   };

@@ -76,7 +76,7 @@ function Product({ productData, product }) {
       activeVariant.files.find(({ type }) => type === "preview")
     );
 
-    // console.log(activeVariant, activeVariantFile.preview_url);
+    // console.log(activeVariant);
   }, [activeVariant]);
 
   useEffect(() => {

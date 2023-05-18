@@ -57,18 +57,24 @@ const Header = ({ setMenuOpen }) => {
                       <div className="relative z-10">
                         <div className="mt-6 grid grid-cols-8 gap-2">
                           <div>
-                            <Link href="#">
-                              <a className="font-bold font-serif text-xl">
-                                Featured
-                              </a>
-                            </Link>
+                            {/* <Link href="#"> */}
+                            <a
+                              href="#"
+                              className="font-bold font-serif text-xl"
+                            >
+                              Featured
+                            </a>
+                            {/* </Link> */}
                             <ul className="mt-3 text-[15px]">
                               <li>
-                                <Link href="/collections/188">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
-                                    Best sellers
-                                  </a>
-                                </Link>
+                                {/* <Link href="/collections/188"> */}
+                                <a
+                                  href="/collections/188"
+                                  className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                >
+                                  Best sellers
+                                </a>
+                                {/* </Link> */}
                               </li>
                               <li>
                                 <Link href="/collections/123">

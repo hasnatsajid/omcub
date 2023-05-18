@@ -6,11 +6,39 @@ import { formatVariantName } from "../../lib/format-variant-name";
 import { PrintfulProduct } from "../../types";
 
 import ProductGrid from "../../components/ProductGrid";
+import { useEffect, useState } from "react";
 
 function Collections({ products, category, categories }) {
   // return <h1>df</h1>;
+  const [isLoading, SetisLoading] = useState(true);
+  const [categoryFlag, setCategoryFlag] = useState(category);
   const categoriesLists = categories;
   // return <h1></h1>;
+
+  // useEffect(() => {
+  //   SetisLoading(true);
+  //   setCategoryFlag(category);
+  //   console.log(category, "page changed");
+  // }, []);
+
+  // useEffect(() => {
+  //   // SetisLoading(true);
+  //   console.log("Category changed");
+  // }, [categoryFlag]);
+
+  useEffect(() => {
+    SetisLoading(false);
+    // console.log("Products changed");
+    // setCategoryFlag(category);
+  }, [products]);
+
+  if (isLoading) {
+    return (
+      <div className="loader">
+        <img src="/images/loader.svg" alt="Loader" />
+      </div>
+    );
+  }
 
   return (
     <>

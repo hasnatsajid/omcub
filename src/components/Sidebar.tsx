@@ -13,7 +13,7 @@ const Sidebar = ({ setMenuOpen, setIsLoading }) => {
     <div className="side-menu z-[100] fixed h-screen bg-white w-screen block sm:hidden overflow-scroll">
       <div className="title flex justify-between w-5/6 mx-auto py-4 sticky top-0 bg-white">
         <h2 className="font-bold">Omcub</h2>
-        <div onClick={onClickMenuItem}>
+        <div onClick={() => setMenuOpen(false)}>
           <img src="/images/close.svg" alt="Close menu" />
         </div>
       </div>

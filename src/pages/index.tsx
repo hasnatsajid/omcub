@@ -127,9 +127,13 @@ const IndexPage = ({ products }) => {
               I<span className="text-lg">nstagram</span>
             </h1>
           </div>
-          <div className="sub text-xs pt-1 pb-3 w-max mx-auto border-b border-black">
+          <a
+            href="https://instagram.com/om_cub"
+            target="new"
+            className="sub text-xs pt-1 pb-3 w-max mx-auto border-b border-black"
+          >
             @om_cub
-          </div>
+          </a>
         </div>
         <InstagramSlider col={3} data={InstagramData} />
       </div>

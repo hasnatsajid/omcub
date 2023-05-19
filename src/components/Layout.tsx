@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import Header from "./Header";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, setIsLoading }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { cart } = useSnipcartCount();
   const { hasItems } = useWishlistState();
@@ -13,9 +13,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {menuOpen ? <Sidebar setMenuOpen={setMenuOpen} /> : ""}
+      {menuOpen ? (
+        <Sidebar setMenuOpen={setMenuOpen} setIsLoading={setIsLoading} />
+      ) : (
+        ""
+      )}
 
-      <Header setMenuOpen={setMenuOpen} />
+      <Header setMenuOpen={setMenuOpen} setIsLoading={setIsLoading} />
       <main className="py-2 md:pb-12">{children}</main>
       <Footer />
     </>

@@ -1,14 +1,19 @@
 import Link from "next/link";
 import { useState } from "react";
 
-const Sidebar = ({ setMenuOpen }) => {
+const Sidebar = ({ setMenuOpen, setIsLoading }) => {
   const [category, setCategory] = useState(true);
+
+  const onClickMenuItem = () => {
+    setMenuOpen(false);
+    setIsLoading(true);
+  };
 
   return (
     <div className="side-menu z-[100] fixed h-screen bg-white w-screen block sm:hidden overflow-scroll">
       <div className="title flex justify-between w-5/6 mx-auto py-4 sticky top-0 bg-white">
         <h2 className="font-bold">Omcub</h2>
-        <div onClick={() => setMenuOpen(false)}>
+        <div onClick={onClickMenuItem}>
           <img src="/images/close.svg" alt="Close menu" />
         </div>
       </div>
@@ -40,12 +45,12 @@ const Sidebar = ({ setMenuOpen }) => {
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/188">
-                <a onClick={() => setMenuOpen(false)}>Best sellers</a>
+                <a onClick={onClickMenuItem}>Best sellers</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/123">
-                <a onClick={() => setMenuOpen(false)}>New arrivals</a>
+                <a onClick={onClickMenuItem}>New arrivals</a>
               </Link>
             </div>
           </div>
@@ -55,235 +60,235 @@ const Sidebar = ({ setMenuOpen }) => {
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/6">
-                <a onClick={() => setMenuOpen(false)}>Shirts</a>
+                <a onClick={onClickMenuItem}>Shirts</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/7">
-                <a onClick={() => setMenuOpen(false)}>Hoodies & Jackets</a>
+                <a onClick={onClickMenuItem}>Hoodies & Jackets</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/27">
-                <a onClick={() => setMenuOpen(false)}>All-over shirts</a>
+                <a onClick={onClickMenuItem}>All-over shirts</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/85">
-                <a onClick={() => setMenuOpen(false)}>Embroidered shirts</a>
+                <a onClick={onClickMenuItem}>Embroidered shirts</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/117">
-                <a onClick={() => setMenuOpen(false)}>Sportswear</a>
+                <a onClick={onClickMenuItem}>Sportswear</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/collections/107">
-                <a onClick={() => setMenuOpen(false)}>Bottoms</a>
+                <a onClick={onClickMenuItem}>Bottoms</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/117">
-                <a onClick={() => setMenuOpen(false)}>Sports wear</a>
+                <a onClick={onClickMenuItem}>Sports wear</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/58">
-                <a onClick={() => setMenuOpen(false)}>Shorts</a>
+                <a onClick={onClickMenuItem}>Shorts</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="#">
-                <a onClick={() => setMenuOpen(false)}>Boardshorts</a>
+                <a onClick={onClickMenuItem}>Boardshorts</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/240">
-                <a onClick={() => setMenuOpen(false)}>Pants</a>
+                <a onClick={onClickMenuItem}>Pants</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/125">
-                <a onClick={() => setMenuOpen(false)}>Underwear</a>
+                <a onClick={onClickMenuItem}>Underwear</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/collections/4">
-                <a onClick={() => setMenuOpen(false)}>Accessories</a>
+                <a onClick={onClickMenuItem}>Accessories</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/16">
-                <a onClick={() => setMenuOpen(false)}>Bags</a>
+                <a onClick={onClickMenuItem}>Bags</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/205">
-                <a onClick={() => setMenuOpen(false)}>Footwear</a>
+                <a onClick={onClickMenuItem}>Footwear</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/15">
-                <a onClick={() => setMenuOpen(false)}>Hats</a>
+                <a onClick={onClickMenuItem}>Hats</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/45">
-                <a onClick={() => setMenuOpen(false)}>Beanies</a>
+                <a onClick={onClickMenuItem}>Beanies</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="#">
-                <a onClick={() => setMenuOpen(false)}>Gear</a>
+                <a onClick={onClickMenuItem}>Gear</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/collections/112">
-                <a onClick={() => setMenuOpen(false)}>Drinkware & coasters</a>
+                <a onClick={onClickMenuItem}>Drinkware & coasters</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/191">
-                <a onClick={() => setMenuOpen(false)}>Water bottles</a>
+                <a onClick={onClickMenuItem}>Water bottles</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/195">
-                <a onClick={() => setMenuOpen(false)}>Mugs</a>
+                <a onClick={onClickMenuItem}>Mugs</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/238">
-                <a onClick={() => setMenuOpen(false)}>Tumblers</a>
+                <a onClick={onClickMenuItem}>Tumblers</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/collections/21">
-                <a onClick={() => setMenuOpen(false)}>Wall Art</a>
+                <a onClick={onClickMenuItem}>Wall Art</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/202">
-                <a onClick={() => setMenuOpen(false)}>Stickers</a>
+                <a onClick={onClickMenuItem}>Stickers</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/55">
-                <a onClick={() => setMenuOpen(false)}>Posters</a>
+                <a onClick={onClickMenuItem}>Posters</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/57">
-                <a onClick={() => setMenuOpen(false)}>Canvas prints</a>
+                <a onClick={onClickMenuItem}>Canvas prints</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/collections/243">
-                <a onClick={() => setMenuOpen(false)}>Tech accessories</a>
+                <a onClick={onClickMenuItem}>Tech accessories</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/244">
-                <a onClick={() => setMenuOpen(false)}>Phones cases</a>
+                <a onClick={onClickMenuItem}>Phones cases</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/250">
-                <a onClick={() => setMenuOpen(false)}>Laptop cases</a>
+                <a onClick={onClickMenuItem}>Laptop cases</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/">
-                <a onClick={() => setMenuOpen(false)}>Kids & Youth</a>
+                <a onClick={onClickMenuItem}>Kids & Youth</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/collections/252">
-                <a onClick={() => setMenuOpen(false)}>Home decor</a>
+                <a onClick={onClickMenuItem}>Home decor</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/258">
-                <a onClick={() => setMenuOpen(false)}>Pillow cases</a>
+                <a onClick={onClickMenuItem}>Pillow cases</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/255">
-                <a onClick={() => setMenuOpen(false)}>Blankets</a>
+                <a onClick={onClickMenuItem}>Blankets</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="#">
-                <a onClick={() => setMenuOpen(false)}>Collections</a>
+                <a onClick={onClickMenuItem}>Collections</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/188">
-                <a onClick={() => setMenuOpen(false)}>Best sellers</a>
+                <a onClick={onClickMenuItem}>Best sellers</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="#">
-                <a onClick={() => setMenuOpen(false)}>Pickleball</a>
+                <a onClick={onClickMenuItem}>Pickleball</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/223">
-                <a onClick={() => setMenuOpen(false)}>Premium products</a>
+                <a onClick={onClickMenuItem}>Premium products</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/144">
-                <a onClick={() => setMenuOpen(false)}>Fall & winter</a>
+                <a onClick={onClickMenuItem}>Fall & winter</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/117">
-                <a onClick={() => setMenuOpen(false)}>Sportswear</a>
+                <a onClick={onClickMenuItem}>Sportswear</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/119">
-                <a onClick={() => setMenuOpen(false)}>Streetwear</a>
+                <a onClick={onClickMenuItem}>Streetwear</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/120">
-                <a onClick={() => setMenuOpen(false)}>Beachwear</a>
+                <a onClick={onClickMenuItem}>Beachwear</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/260">
-                <a onClick={() => setMenuOpen(false)}>Halloween</a>
+                <a onClick={onClickMenuItem}>Halloween</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/209">
-                <a onClick={() => setMenuOpen(false)}>Back to school</a>
+                <a onClick={onClickMenuItem}>Back to school</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/collections/226">
-                <a onClick={() => setMenuOpen(false)}>Shop All Mens</a>
+                <a onClick={onClickMenuItem}>Shop All Mens</a>
               </Link>
             </div>
           </div>
@@ -300,167 +305,167 @@ const Sidebar = ({ setMenuOpen }) => {
             </div> */}
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/32">
-                <a onClick={() => setMenuOpen(false)}>T-shirts</a>
+                <a onClick={onClickMenuItem}>T-shirts</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/35">
-                <a onClick={() => setMenuOpen(false)}>All over t-shirt</a>
+                <a onClick={onClickMenuItem}>All over t-shirt</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/31">
-                <a onClick={() => setMenuOpen(false)}>Crop tops</a>
+                <a onClick={onClickMenuItem}>Crop tops</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/33">
-                <a onClick={() => setMenuOpen(false)}>3/4 sleeve shirts</a>
+                <a onClick={onClickMenuItem}>3/4 sleeve shirts</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/34">
-                <a onClick={() => setMenuOpen(false)}>long sleeve shirts</a>
+                <a onClick={onClickMenuItem}>long sleeve shirts</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/96">
-                <a onClick={() => setMenuOpen(false)}>Hoodies & Jackets</a>
+                <a onClick={onClickMenuItem}>Hoodies & Jackets</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/117">
-                <a onClick={() => setMenuOpen(false)}>Sportswear</a>
+                <a onClick={onClickMenuItem}>Sportswear</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/60">
-                <a onClick={() => setMenuOpen(false)}>Skirts</a>
+                <a onClick={onClickMenuItem}>Skirts</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/11">
-                <a onClick={() => setMenuOpen(false)}>Dresses</a>
+                <a onClick={onClickMenuItem}>Dresses</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/58">
-                <a onClick={() => setMenuOpen(false)}>Shorts</a>
+                <a onClick={onClickMenuItem}>Shorts</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/240">
-                <a onClick={() => setMenuOpen(false)}>Pants</a>
+                <a onClick={onClickMenuItem}>Pants</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/100">
-                <a onClick={() => setMenuOpen(false)}>Swimwear</a>
+                <a onClick={onClickMenuItem}>Swimwear</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/125">
-                <a onClick={() => setMenuOpen(false)}>Under wear</a>
+                <a onClick={onClickMenuItem}>Under wear</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/collections/4">
-                <a onClick={() => setMenuOpen(false)}>Accessories</a>
+                <a onClick={onClickMenuItem}>Accessories</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/16">
-                <a onClick={() => setMenuOpen(false)}>Bags & beauty</a>
+                <a onClick={onClickMenuItem}>Bags & beauty</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/205">
-                <a onClick={() => setMenuOpen(false)}>Footwear</a>
+                <a onClick={onClickMenuItem}>Footwear</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/15">
-                <a onClick={() => setMenuOpen(false)}>Hats</a>
+                <a onClick={onClickMenuItem}>Hats</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/45">
-                <a onClick={() => setMenuOpen(false)}>Beanies</a>
+                <a onClick={onClickMenuItem}>Beanies</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="#">
-                <a onClick={() => setMenuOpen(false)}>Gear</a>
+                <a onClick={onClickMenuItem}>Gear</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/collections/112">
-                <a onClick={() => setMenuOpen(false)}>Drinkware & coasters</a>
+                <a onClick={onClickMenuItem}>Drinkware & coasters</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/191">
-                <a onClick={() => setMenuOpen(false)}>Water bottles</a>
+                <a onClick={onClickMenuItem}>Water bottles</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/195">
-                <a onClick={() => setMenuOpen(false)}>Mugs</a>
+                <a onClick={onClickMenuItem}>Mugs</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/238">
-                <a onClick={() => setMenuOpen(false)}>Tumblers</a>
+                <a onClick={onClickMenuItem}>Tumblers</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/collections/21">
-                <a onClick={() => setMenuOpen(false)}>Wall Art</a>
+                <a onClick={onClickMenuItem}>Wall Art</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/202">
-                <a onClick={() => setMenuOpen(false)}>Stickers</a>
+                <a onClick={onClickMenuItem}>Stickers</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/55">
-                <a onClick={() => setMenuOpen(false)}>Posters</a>
+                <a onClick={onClickMenuItem}>Posters</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/57">
-                <a onClick={() => setMenuOpen(false)}>Canvas prints</a>
+                <a onClick={onClickMenuItem}>Canvas prints</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/collections/243">
-                <a onClick={() => setMenuOpen(false)}>Tech accessories</a>
+                <a onClick={onClickMenuItem}>Tech accessories</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/244">
-                <a onClick={() => setMenuOpen(false)}>Phones cases</a>
+                <a onClick={onClickMenuItem}>Phones cases</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/250">
-                <a onClick={() => setMenuOpen(false)}>Laptop cases</a>
+                <a onClick={onClickMenuItem}>Laptop cases</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/">
-                <a onClick={() => setMenuOpen(false)}>Kids & Youth</a>
+                <a onClick={onClickMenuItem}>Kids & Youth</a>
               </Link>
             </div>
           </div>
@@ -468,86 +473,86 @@ const Sidebar = ({ setMenuOpen }) => {
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/collections/252">
-                <a onClick={() => setMenuOpen(false)}>Home decor</a>
+                <a onClick={onClickMenuItem}>Home decor</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/258">
-                <a onClick={() => setMenuOpen(false)}>Pillow cases</a>
+                <a onClick={onClickMenuItem}>Pillow cases</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/255">
-                <a onClick={() => setMenuOpen(false)}>Blankets</a>
+                <a onClick={onClickMenuItem}>Blankets</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="#">
-                <a onClick={() => setMenuOpen(false)}>Duvet covers</a>
+                <a onClick={onClickMenuItem}>Duvet covers</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/45">
-                <a onClick={() => setMenuOpen(false)}>Bean bags</a>
+                <a onClick={onClickMenuItem}>Bean bags</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="#">
-                <a onClick={() => setMenuOpen(false)}>Collections</a>
+                <a onClick={onClickMenuItem}>Collections</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/188">
-                <a onClick={() => setMenuOpen(false)}>Best sellers</a>
+                <a onClick={onClickMenuItem}>Best sellers</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="#">
-                <a onClick={() => setMenuOpen(false)}>Pickleball</a>
+                <a onClick={onClickMenuItem}>Pickleball</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/223">
-                <a onClick={() => setMenuOpen(false)}>Premium products</a>
+                <a onClick={onClickMenuItem}>Premium products</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/144">
-                <a onClick={() => setMenuOpen(false)}>Fall & winter</a>
+                <a onClick={onClickMenuItem}>Fall & winter</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/117">
-                <a onClick={() => setMenuOpen(false)}>Sportswear</a>
+                <a onClick={onClickMenuItem}>Sportswear</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/119">
-                <a onClick={() => setMenuOpen(false)}>Streetwear</a>
+                <a onClick={onClickMenuItem}>Streetwear</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/120">
-                <a onClick={() => setMenuOpen(false)}>Beachwear</a>
+                <a onClick={onClickMenuItem}>Beachwear</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/260">
-                <a onClick={() => setMenuOpen(false)}>Halloween</a>
+                <a onClick={onClickMenuItem}>Halloween</a>
               </Link>
             </div>
             <div className="sub-item ml-4 text-gray-600 font-normal">
               <Link href="/collections/209">
-                <a onClick={() => setMenuOpen(false)}>Back to school</a>
+                <a onClick={onClickMenuItem}>Back to school</a>
               </Link>
             </div>
           </div>
           <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/collections/227">
-                <a onClick={() => setMenuOpen(false)}>Shop All Womens</a>
+                <a onClick={onClickMenuItem}>Shop All Womens</a>
               </Link>
             </div>
           </div>

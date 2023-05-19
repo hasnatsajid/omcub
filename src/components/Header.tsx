@@ -3,7 +3,7 @@ import Link from "next/link";
 import useWishlistState from "../hooks/useWishlistState";
 import useSnipcartCount from "../hooks/useSnipcartCount";
 
-const Header = ({ setMenuOpen }) => {
+const Header = ({ setMenuOpen, setIsLoading }) => {
   const { cart } = useSnipcartCount();
   const { hasItems } = useWishlistState();
   const cartHasItems = cart.items.count !== 0;
@@ -57,28 +57,28 @@ const Header = ({ setMenuOpen }) => {
                       <div className="relative z-10">
                         <div className="mt-6 grid grid-cols-8 gap-2">
                           <div>
-                            {/* <Link href="#"> */}
-                            <a
-                              href="#"
-                              className="font-bold font-serif text-xl"
-                            >
-                              Featured
-                            </a>
-                            {/* </Link> */}
+                            <Link href="#">
+                              <a className="font-bold font-serif text-xl">
+                                Featured
+                              </a>
+                            </Link>
                             <ul className="mt-3 text-[15px]">
                               <li>
-                                {/* <Link href="/collections/188"> */}
-                                <a
-                                  href="/collections/188"
-                                  className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                >
-                                  Best sellers
-                                </a>
-                                {/* </Link> */}
+                                <Link href="/collections/188">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
+                                    Best sellers
+                                  </a>
+                                </Link>
                               </li>
                               <li>
                                 <Link href="/collections/123">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     New arrivals
                                   </a>
                                 </Link>
@@ -90,35 +90,50 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/6">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Shirts
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/7">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Hoodies & Jackets
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/27">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     All-over shirts
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/85">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Embroidered shirts
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/117">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Sportswear
                                   </a>
                                 </Link>
@@ -134,14 +149,20 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/117">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Sports wear
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/58">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Shorts
                                   </a>
                                 </Link>
@@ -150,20 +171,27 @@ const Header = ({ setMenuOpen }) => {
                                 <a
                                   href="#"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                  onClick={() => setIsLoading(true)}
                                 >
                                   Boardshorts
                                 </a>
                               </li>
                               <li>
                                 <Link href="/collections/240">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Pants
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/125">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Underwear
                                   </a>
                                 </Link>
@@ -179,35 +207,50 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/16">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Bags
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/205">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Footwear
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/15">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Hats
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/45">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Beanies
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="#">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Gear
                                   </a>
                                 </Link>
@@ -223,21 +266,30 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/191">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Water bottles
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/195">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Mugs
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/238">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Tumblers
                                   </a>
                                 </Link>
@@ -253,21 +305,30 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/202">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Stickers
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/55">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Posters
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/57">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Canvas prints
                                   </a>
                                 </Link>
@@ -283,14 +344,20 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/244">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Phones cases
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/250">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Laptop cases
                                   </a>
                                 </Link>
@@ -315,14 +382,20 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/258">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Pillow cases
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/255">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Blankets
                                   </a>
                                 </Link>
@@ -336,63 +409,90 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/188">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Best sellers
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="#">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Pickleball
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/223">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Premium products
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/144">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Fall & winter
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/117">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Sportswear
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/119">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Streetwear
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/120">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Beachwear
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/260">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Halloween
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/209">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Back to school
                                   </a>
                                 </Link>
@@ -408,14 +508,14 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/188">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
                                     Best sellers
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/123">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
                                     New arrivals
                                   </a>
                                 </Link>
@@ -453,91 +553,130 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/32">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     T-shirts
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/35">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     All over t-shirt
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/31">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Crop tops
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/33">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     3/4 sleeve shirts
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/34">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     long sleeve shirts
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/96">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Hoodies & Jackets
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/117">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Sportswear
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/60">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Skirts
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/11">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Dresses
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/58">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Shorts
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/240">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Pants
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/100">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Swimwear
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/125">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Under wear
                                   </a>
                                 </Link>
@@ -554,35 +693,50 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/16">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Bags & beauty
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/205">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Footwear
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/15">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Hats
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/45">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Beanies
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="#">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Gear
                                   </a>
                                 </Link>
@@ -598,21 +752,30 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/191">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Water bottles
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/195">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Mugs
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/238">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Tumblers
                                   </a>
                                 </Link>
@@ -628,28 +791,37 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/202">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Stickers
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/55">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Posters
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/57">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Canvas prints
                                   </a>
                                 </Link>
                               </li>
                               {/* <li>
                                 <Link href="#">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
                                     Acrylic blocks
                                   </a>
                                 </Link>
@@ -665,14 +837,20 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/244">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Phones cases
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/250">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Laptop cases
                                   </a>
                                 </Link>
@@ -695,28 +873,40 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/258">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Pillow cases
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/255">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Blankets
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="#">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Duvet covers
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/45">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Bean bags
                                   </a>
                                 </Link>
@@ -730,63 +920,90 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/188">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Best sellers
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="#">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Pickleball
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/223">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Premium products
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/144">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Fall & winter
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/117">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Sportswear
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/119">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Streetwear
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/120">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Beachwear
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/260">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Halloween
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/209">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => setIsLoading(true)}
+                                  >
                                     Back to school
                                   </a>
                                 </Link>
@@ -811,21 +1028,21 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/258">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
                                     Pillow cases
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/255">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
                                     Blankets
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/45">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
                                     Bean bags
                                   </a>
                                 </Link>
@@ -839,56 +1056,56 @@ const Header = ({ setMenuOpen }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/188">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
                                     Best sellers
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/223">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
                                     Premium products
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/144">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
                                     Fall & winter
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/117">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
                                     Sportswear
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/119">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
                                     Streetwear
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/120">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
                                     Beachwear
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/260">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
                                     Halloween
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/209">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal">
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
                                     Back to school
                                   </a>
                                 </Link>

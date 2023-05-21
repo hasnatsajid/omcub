@@ -15,13 +15,15 @@ import Carousel from "../components/CarouselMulti";
 import { useState } from "react";
 import Head from "next/head";
 import InstagramSlider from "../components/InstagramSlider";
+import Link from "next/link";
 
 type IndexPageProps = {
   products: PrintfulProduct[];
 };
 
-const IndexPage = ({ products }) => {
+const IndexPage = ({ products, men, women }) => {
   const [images, setImages] = useState(data);
+  console.log(men, women);
 
   // const IndexPage: React.FC<IndexPageProps> = ({ products }) => (
   return (
@@ -61,16 +63,18 @@ const IndexPage = ({ products }) => {
               <h2 className="heading sm:text-[22px] font-serif font-bold">
                 Best Sellers
               </h2>
-              <div className="count text-[13px]">126 items</div>
+              <div className="count text-[13px]">{products.length} items</div>
             </div>
             <div className="button">
-              <button className="font-bold text-xs border border-black  rounded px-5 py-2 hover:bg-black hover:text-white duration-200 hover:ease">
-                SHOP ALL
-              </button>
+              <Link href="/collections/188">
+                <button className="font-bold text-xs border border-black  rounded px-5 py-2 hover:bg-black hover:text-white duration-200 hover:ease">
+                  SHOP ALL
+                </button>
+              </Link>
             </div>
           </div>
           <div className="carousel">
-            <Carousel col={3} data={bestSellers} />
+            <Carousel col={3} data={products} />
           </div>
         </div>
       </div>
@@ -81,16 +85,18 @@ const IndexPage = ({ products }) => {
               <h2 className="heading sm:text-[22px] font-serif font-bold">
                 Men&apos;s New Arrivals
               </h2>
-              <div className="count text-[13px]">126 items</div>
+              <div className="count text-[13px]">{men.length} items</div>
             </div>
             <div className="button">
-              <button className="font-bold text-xs border border-black  rounded px-5 py-2 hover:bg-black hover:text-white duration-200 hover:ease">
-                SHOP ALL
-              </button>
+              <Link href="/collections/123">
+                <button className="font-bold text-xs border border-black  rounded px-5 py-2 hover:bg-black hover:text-white duration-200 hover:ease">
+                  SHOP ALL
+                </button>
+              </Link>
             </div>
           </div>
           <div className="carousel">
-            <Carousel col={4} data={images} />
+            <Carousel col={4} data={men} />
           </div>
         </div>
       </div>
@@ -101,16 +107,18 @@ const IndexPage = ({ products }) => {
               <h2 className="heading sm:text-[22px] font-serif font-bold">
                 Women&apos;s Collection
               </h2>
-              <div className="count text-[13px]">126 items</div>
+              <div className="count text-[13px]">{women.length} items</div>
             </div>
             <div className="button">
-              <button className="font-bold text-xs border border-black  rounded px-5 py-2 hover:bg-black hover:text-white duration-200 hover:ease">
-                SHOP ALL
-              </button>
+              <Link href="/collections/227">
+                <button className="font-bold text-xs border border-black  rounded px-5 py-2 hover:bg-black hover:text-white duration-200 hover:ease">
+                  SHOP ALL
+                </button>
+              </Link>
             </div>
           </div>
           <div className="carousel">
-            <Carousel col={3} data={WomenData} />
+            <Carousel col={3} data={women} />
           </div>
         </div>
       </div>
@@ -144,22 +152,41 @@ const IndexPage = ({ products }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { result: productIds } = await printful.get("sync/products");
-  const allProducts = await Promise.all(
-    productIds.map(async ({ id }) => await printful.get(`sync/products/${id}`))
+  const newSellersResponse = await fetch(
+    `https://api.printful.com/store/products?category_id=188`,
+    {
+      headers: {
+        Authorization: "Bearer WMrkZspe4PkOWW3Jy76VVWdJ6fkagMd9XOst78mI",
+      },
+    }
   );
-  const products: PrintfulProduct[] = allProducts.map(
-    ({ result: { sync_product, sync_variants } }) => ({
-      ...sync_product,
-      variants: sync_variants.map(({ name, ...variant }) => ({
-        name: formatVariantName(name),
-        ...variant,
-      })),
-    })
+  const products = await newSellersResponse.json();
+
+  const menArrivalsResponse = await fetch(
+    `https://api.printful.com/store/products?category_id=188`,
+    {
+      headers: {
+        Authorization: "Bearer WMrkZspe4PkOWW3Jy76VVWdJ6fkagMd9XOst78mI",
+      },
+    }
   );
+  const men = await menArrivalsResponse.json();
+
+  const womenArrivalsResponse = await fetch(
+    `https://api.printful.com/store/products?category_id=188`,
+    {
+      headers: {
+        Authorization: "Bearer WMrkZspe4PkOWW3Jy76VVWdJ6fkagMd9XOst78mI",
+      },
+    }
+  );
+  const women = await womenArrivalsResponse.json();
+
   return {
     props: {
-      products: shuffle(products),
+      products: products.result,
+      men: men.result,
+      women: women.result,
     },
   };
 };

@@ -102,7 +102,7 @@ const Carousel = ({ col, data }) => {
             col === 4 ? "gap-1" : "gap-2"
           } overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0 w-10/12 mx-auto`}
         >
-          {data?.resources.map((resource, index) => {
+          {data?.map((resource, index) => {
             return (
               <div
                 key={index}
@@ -113,10 +113,12 @@ const Carousel = ({ col, data }) => {
                 <a
                   href={resource.link}
                   className="h-full w-full aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"
-                  style={{ backgroundImage: `url(${resource.imageUrl || ""})` }}
+                  style={{
+                    backgroundImage: `url(${resource.thumbnail_url || ""})`,
+                  }}
                 >
                   <img
-                    src={resource.imageUrl || ""}
+                    src={resource.thumbnail_url || ""}
                     alt={resource.title}
                     className="w-full aspect-square hidden"
                   />

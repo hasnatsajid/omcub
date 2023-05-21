@@ -217,7 +217,6 @@ function Collections({
 }
 
 export const getServerSideProps = async (context) => {
-  // const { result: productIds } = await printful.get("sync/products");
   const productResponse = await fetch(
     `https://api.printful.com/store/products?category_id=${context.params.id}`,
     {
@@ -235,20 +234,6 @@ export const getServerSideProps = async (context) => {
 
   const categoriesList = await fetch(`https://api.printful.com/categories`);
   const categories = await categoriesList.json();
-  // const { result } = await printful.get("/products");
-  // const { result } = await printful.get("/products?category_id=32");
-  // const allProducts = await Promise.all(
-  //   productIds.map(async ({ id }) => await printful.get(`sync/products/${id}`))
-  // );
-  // const products: PrintfulProduct[] = allProducts.map(
-  //   ({ result: { sync_product, sync_variants } }) => ({
-  //     ...sync_product,
-  //     variants: sync_variants.map(({ name, ...variant }) => ({
-  //       name: formatVariantName(name),
-  //       ...variant,
-  //     })),
-  //   })
-  // );
 
   return {
     props: {

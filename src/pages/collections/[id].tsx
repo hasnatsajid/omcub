@@ -27,7 +27,7 @@ function Collections({
   useEffect(() => {
     setIsLoading(true);
     setCategoryFlag(category);
-    console.log(category, "page loaded");
+    // console.log(category, "page loaded");
   }, []);
 
   // useEffect(() => {
@@ -38,7 +38,7 @@ function Collections({
   useEffect(() => {
     // SetisLoading((prev) => !prev);
     setIsLoading(false);
-    console.log("Products changed");
+    // console.log("Products changed");
     setCategoryFlag(category);
   }, [products]);
 

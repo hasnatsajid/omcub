@@ -23,7 +23,6 @@ type IndexPageProps = {
 
 const IndexPage = ({ products, men, women }) => {
   const [images, setImages] = useState(data);
-  console.log(men, women);
 
   // const IndexPage: React.FC<IndexPageProps> = ({ products }) => (
   return (

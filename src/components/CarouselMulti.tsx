@@ -5,7 +5,6 @@ import { useState, useRef, useEffect } from "react";
 // import data from "../data.json";
 
 const Carousel = ({ col, data }) => {
-  console.log(data);
   const maxScrollWidth = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const carousel = useRef(null);

@@ -1,9 +1,11 @@
+import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 
 // Data
 // import data from "../data.json";
 
 const Carousel = ({ col, data }) => {
+  console.log(data);
   const maxScrollWidth = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const carousel = useRef(null);
@@ -106,31 +108,35 @@ const Carousel = ({ col, data }) => {
             return (
               <div
                 key={index}
-                className={`carousel-item text-center relative ${
+                className={`cursor-pointer carousel-item text-center relative ${
                   col === 4 ? "w-64" : "lg:w-4/12"
                 }  ${col === 4 ? "h-64" : "h-96"} snap-start`}
               >
-                <a
-                  href={resource.link}
-                  className="h-full w-full aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"
-                  style={{
-                    backgroundImage: `url(${resource.thumbnail_url || ""})`,
-                  }}
-                >
-                  <img
-                    src={resource.thumbnail_url || ""}
-                    alt={resource.title}
-                    className="w-full aspect-square hidden"
-                  />
-                </a>
-                <a
-                  href={resource.link}
-                  className="h-full w-full aspect-square block absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 z-10"
-                >
-                  <h3 className="text-white py-6 px-3 mx-auto text-xl">
-                    {/* {resource.title} */}
-                  </h3>
-                </a>
+                <Link href={`/product/${resource.id}`}>
+                  <a
+                    className="h-full w-full aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"
+                    style={{
+                      backgroundImage: `url(${resource.thumbnail_url || ""})`,
+                    }}
+                  >
+                    <img
+                      src={resource.thumbnail_url || ""}
+                      alt={resource.title}
+                      className="w-full aspect-square hidden"
+                    />
+                  </a>
+                </Link>
+
+                <Link href={`/product/${resource.id}`}>
+                  <a
+                    href={resource.link}
+                    className="h-full w-full aspect-square block absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 z-10"
+                  >
+                    <h3 className="text-white py-6 px-3 mx-auto text-xl">
+                      {/* {resource.title} */}
+                    </h3>
+                  </a>
+                </Link>
               </div>
             );
           })}

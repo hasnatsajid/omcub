@@ -499,6 +499,15 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                               </li>
                             </ul>
                           </div>
+                          <div className="mt-6 grid grid-cols-1 gap-6 text-center">
+                            <div>
+                              <Link href="/collections/226">
+                                <a className="font-bold font-serif text-xl">
+                                  Shop All Mens
+                                </a>
+                              </Link>
+                            </div>
+                          </div>
                           {/* <div>
                             <Link href="#">
                               <a className="font-bold font-serif text-xl">
@@ -1019,99 +1028,6 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                               </a>
                             </Link>
                           </div>
-                          {/* <div>
-                            <Link href="/collections/252">
-                              <a className="font-bold font-serif text-xl">
-                                Home decor
-                              </a>
-                            </Link>
-                            <ul className="mt-3 text-[15px]">
-                              <li>
-                                <Link href="/collections/258">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
-                                    Pillow cases
-                                  </a>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href="/collections/255">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
-                                    Blankets
-                                  </a>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href="/collections/45">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
-                                    Bean bags
-                                  </a>
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-                          <div>
-                            <p className="font-bold font-serif text-xl">
-                              Collections
-                            </p>
-                            <ul className="mt-3 text-[15px]">
-                              <li>
-                                <Link href="/collections/188">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
-                                    Best sellers
-                                  </a>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href="/collections/223">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
-                                    Premium products
-                                  </a>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href="/collections/144">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
-                                    Fall & winter
-                                  </a>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href="/collections/117">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
-                                    Sportswear
-                                  </a>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href="/collections/119">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
-                                    Streetwear
-                                  </a>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href="/collections/120">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
-                                    Beachwear
-                                  </a>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href="/collections/260">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
-                                    Halloween
-                                  </a>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href="/collections/209">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
-                                    Back to school
-                                  </a>
-                                </Link>
-                              </li>
-                            </ul>
-                          </div> */}
                         </div>
                       </div>
                     </div>

@@ -2,11 +2,29 @@ import Link from "next/link";
 
 import useWishlistState from "../hooks/useWishlistState";
 import useSnipcartCount from "../hooks/useSnipcartCount";
+import { useState } from "react";
 
 const Header = ({ setMenuOpen, setIsLoading }) => {
   const { cart } = useSnipcartCount();
   const { hasItems } = useWishlistState();
   const cartHasItems = cart.items.count !== 0;
+  const [menMenu, setMenMenu] = useState(false);
+  const [womenMenu, setWomenMenu] = useState(false);
+
+  const toggleMen = () => {
+    setWomenMenu(false);
+    setMenMenu((prev) => !prev);
+  };
+
+  const toggleWomen = () => {
+    setMenMenu(false);
+    setWomenMenu((prev) => !prev);
+  };
+
+  const toggleMenu = () => {
+    setMenMenu(false);
+    setWomenMenu(false);
+  };
 
   return (
     <header className="py-4 sm:py-6 px-4 mt-2">
@@ -46,10 +64,18 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
             <nav className="flex justify-center">
               <ul className="flex items-center justify-center font-semibold">
                 <li className="group px-3 py-2">
-                  <button className="hover:opacity-50 cursor-default">
+                  <button
+                    className="hover:opacity-50 cursor-default"
+                    onClick={toggleMen}
+                  >
                     Men
                   </button>
-                  <div className="absolute top-[7%] left-0 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[100%] transform">
+                  <div
+                    // opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                    className={`absolute top-[10%] left-0 transition group-hover:translate-y-5 translate-y-0 duration-500 ease-in-out group-hover:transform z-50 min-w-[100%] transform ${
+                      !menMenu ? "opacity-0 invisible" : "opacity-100 visible"
+                    }`}
+                  >
                     {/* <div className="absolute top-0 -left-48 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[560px] transform"> */}
                     <div className="relative top-12 p-6 bg-white rounded-xl shadow-xl w-full h-screen">
                       <div className="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12.65rem] duration-500 ease-in-out rounded-sm"></div>
@@ -58,7 +84,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                         <div className="mt-6 grid grid-cols-8 gap-2">
                           <div>
                             <Link href="#">
-                              <a className="font-bold font-serif text-xl">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
                                 Featured
                               </a>
                             </Link>
@@ -67,7 +96,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/188">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Best sellers
                                   </a>
@@ -77,7 +109,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/123">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     New arrivals
                                   </a>
@@ -92,7 +127,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/6">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Shirts
                                   </a>
@@ -102,7 +140,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/7">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Hoodies & Jackets
                                   </a>
@@ -112,7 +153,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/27">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     All-over shirts
                                   </a>
@@ -122,7 +166,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/85">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Embroidered shirts
                                   </a>
@@ -132,7 +179,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/117">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Sportswear
                                   </a>
@@ -142,7 +192,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                           </div>
                           <div>
                             <Link href="/collections/107">
-                              <a className="font-bold font-serif text-xl">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
                                 Bottoms
                               </a>
                             </Link>
@@ -151,7 +204,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/117">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Sports wear
                                   </a>
@@ -161,7 +217,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/58">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Shorts
                                   </a>
@@ -171,7 +230,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <a
                                   href="#"
                                   className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                  onClick={() => setIsLoading(true)}
+                                  onClick={() => {
+                                    setIsLoading(true);
+                                    toggleMenu();
+                                  }}
                                 >
                                   Boardshorts
                                 </a>
@@ -180,7 +242,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/240">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Pants
                                   </a>
@@ -190,7 +255,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/125">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Underwear
                                   </a>
@@ -200,7 +268,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                           </div>
                           <div>
                             <Link href="/collections/4">
-                              <a className="font-bold font-serif text-xl">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
                                 Accessories
                               </a>
                             </Link>
@@ -209,7 +280,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/16">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Bags
                                   </a>
@@ -219,7 +293,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/205">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Footwear
                                   </a>
@@ -229,7 +306,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/15">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Hats
                                   </a>
@@ -239,7 +319,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/45">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Beanies
                                   </a>
@@ -249,7 +332,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="#">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Gear
                                   </a>
@@ -259,7 +345,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                           </div>
                           <div>
                             <Link href="/collections/112">
-                              <a className="font-bold font-serif text-xl">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
                                 Drinkware & coasters
                               </a>
                             </Link>
@@ -268,7 +357,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/191">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Water bottles
                                   </a>
@@ -278,7 +370,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/195">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Mugs
                                   </a>
@@ -288,7 +383,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/238">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Tumblers
                                   </a>
@@ -298,7 +396,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                           </div>
                           <div>
                             <Link href="/collections/21">
-                              <a className="font-bold font-serif text-xl">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
                                 Wall Art
                               </a>
                             </Link>
@@ -307,7 +408,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/202">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Stickers
                                   </a>
@@ -317,7 +421,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/55">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Posters
                                   </a>
@@ -327,7 +434,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/57">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Canvas prints
                                   </a>
@@ -337,7 +447,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                           </div>
                           <div>
                             <Link href="/collections/243">
-                              <a className="font-bold font-serif text-xl">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
                                 Tech accessories
                               </a>
                             </Link>
@@ -346,7 +459,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/244">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Phones cases
                                   </a>
@@ -356,7 +472,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/250">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Laptop cases
                                   </a>
@@ -366,7 +485,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                           </div>
                           <div>
                             <Link href="/collections/228">
-                              <a className="font-bold font-serif text-xl">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
                                 Kids & Youth
                               </a>
                             </Link>
@@ -375,7 +497,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                         <div className="mt-6 grid grid-cols-6 gap-6">
                           <div>
                             <Link href="/collections/252">
-                              <a className="font-bold font-serif text-xl">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
                                 Home decor
                               </a>
                             </Link>
@@ -384,7 +509,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/258">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Pillow cases
                                   </a>
@@ -394,7 +522,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/255">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Blankets
                                   </a>
@@ -411,7 +542,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/188">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Best sellers
                                   </a>
@@ -421,7 +555,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="#">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Pickleball
                                   </a>
@@ -431,7 +568,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/223">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Premium products
                                   </a>
@@ -441,7 +581,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/144">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Fall & winter
                                   </a>
@@ -451,7 +594,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/117">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Sportswear
                                   </a>
@@ -461,7 +607,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/119">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Streetwear
                                   </a>
@@ -471,7 +620,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/120">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Beachwear
                                   </a>
@@ -481,7 +633,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/260">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Halloween
                                   </a>
@@ -491,7 +646,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/209">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Back to school
                                   </a>
@@ -502,7 +660,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                           <div className="mt-6 grid grid-cols-1 gap-6 text-center">
                             <div>
                               <Link href="/collections/226">
-                                <a className="font-bold font-serif text-xl">
+                                <a
+                                  className="font-bold font-serif text-xl"
+                                  onClick={toggleMenu}
+                                >
                                   Shop All Mens
                                 </a>
                               </Link>
@@ -517,14 +678,20 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                             <ul className="mt-3 text-[15px]">
                               <li>
                                 <Link href="/collections/188">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}>
                                     Best sellers
                                   </a>
                                 </Link>
                               </li>
                               <li>
                                 <Link href="/collections/123">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}>
                                     New arrivals
                                   </a>
                                 </Link>
@@ -545,10 +712,17 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
               </ul>
               <ul className="flex items-center justify-center font-semibold">
                 <li className="group px-3 py-2">
-                  <button className="hover:opacity-50 cursor-default">
+                  <button
+                    className="hover:opacity-50 cursor-default"
+                    onClick={toggleWomen}
+                  >
                     Women
                   </button>
-                  <div className="absolute top-[7%] left-0 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[100%] transform">
+                  <div
+                    className={`absolute top-[10%] left-0 transition group-hover:translate-y-5 translate-y-0 duration-500 ease-in-out group-hover:transform z-50 min-w-[100%] transform ${
+                      !womenMenu ? "opacity-0 invisible" : "opacity-100 visible"
+                    }`}
+                  >
                     {/* <div className="absolute top-0 -left-48 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[560px] transform"> */}
                     <div className="relative top-12 p-6 bg-white rounded-xl shadow-xl w-full h-screen">
                       <div className="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12.65rem] duration-500 ease-in-out rounded-sm"></div>
@@ -564,7 +738,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/32">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     T-shirts
                                   </a>
@@ -574,7 +751,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/35">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     All over t-shirt
                                   </a>
@@ -584,7 +764,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/31">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Crop tops
                                   </a>
@@ -594,7 +777,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/33">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     3/4 sleeve shirts
                                   </a>
@@ -604,7 +790,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/34">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     long sleeve shirts
                                   </a>
@@ -614,7 +803,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/96">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Hoodies & Jackets
                                   </a>
@@ -624,7 +816,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/117">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Sportswear
                                   </a>
@@ -634,7 +829,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/60">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Skirts
                                   </a>
@@ -644,7 +842,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/11">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Dresses
                                   </a>
@@ -654,7 +855,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/58">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Shorts
                                   </a>
@@ -664,7 +868,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/240">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Pants
                                   </a>
@@ -674,7 +881,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/100">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Swimwear
                                   </a>
@@ -684,7 +894,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/125">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Under wear
                                   </a>
@@ -695,7 +908,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
 
                           <div>
                             <Link href="/collections/4">
-                              <a className="font-bold font-serif text-xl">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
                                 Accessories
                               </a>
                             </Link>
@@ -704,7 +920,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/16">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Bags & beauty
                                   </a>
@@ -714,7 +933,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/205">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Footwear
                                   </a>
@@ -724,7 +946,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/15">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Hats
                                   </a>
@@ -734,7 +959,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/45">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Beanies
                                   </a>
@@ -744,7 +972,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="#">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Gear
                                   </a>
@@ -754,7 +985,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                           </div>
                           <div>
                             <Link href="/collections/112">
-                              <a className="font-bold font-serif text-xl">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
                                 Drinkware & coasters
                               </a>
                             </Link>
@@ -763,7 +997,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/191">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Water bottles
                                   </a>
@@ -773,7 +1010,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/195">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Mugs
                                   </a>
@@ -783,7 +1023,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/238">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Tumblers
                                   </a>
@@ -793,7 +1036,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                           </div>
                           <div>
                             <Link href="/collections/21">
-                              <a className="font-bold font-serif text-xl">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
                                 Wall Art
                               </a>
                             </Link>
@@ -802,7 +1048,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/202">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Stickers
                                   </a>
@@ -812,7 +1061,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/55">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Posters
                                   </a>
@@ -822,7 +1074,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/57">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Canvas prints
                                   </a>
@@ -830,7 +1085,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                               </li>
                               {/* <li>
                                 <Link href="#">
-                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => setIsLoading(true)}>
+                                  <a className="text-gray-600 hover:text-gray-800 py-1 block font-normal" onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}>
                                     Acrylic blocks
                                   </a>
                                 </Link>
@@ -839,7 +1097,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                           </div>
                           <div>
                             <Link href="/collections/243">
-                              <a className="font-bold font-serif text-xl">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
                                 Tech accessories
                               </a>
                             </Link>
@@ -848,7 +1109,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/244">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Phones cases
                                   </a>
@@ -858,7 +1122,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/250">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Laptop cases
                                   </a>
@@ -868,14 +1135,20 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                           </div>
                           <div>
                             <Link href="/collections/228">
-                              <a className="font-bold font-serif text-xl">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
                                 Kids & Youth
                               </a>
                             </Link>
                           </div>
                           <div>
                             <Link href="/collections/252">
-                              <a className="font-bold font-serif text-xl">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
                                 Home decor
                               </a>
                             </Link>
@@ -884,7 +1157,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/258">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Pillow cases
                                   </a>
@@ -894,7 +1170,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/255">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Blankets
                                   </a>
@@ -904,7 +1183,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="#">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Duvet covers
                                   </a>
@@ -914,7 +1196,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/45">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Bean bags
                                   </a>
@@ -931,7 +1216,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/188">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Best sellers
                                   </a>
@@ -941,7 +1229,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="#">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Pickleball
                                   </a>
@@ -951,7 +1242,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/223">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Premium products
                                   </a>
@@ -961,7 +1255,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/144">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Fall & winter
                                   </a>
@@ -971,7 +1268,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/117">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Sportswear
                                   </a>
@@ -981,7 +1281,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/119">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Streetwear
                                   </a>
@@ -991,7 +1294,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/120">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Beachwear
                                   </a>
@@ -1001,7 +1307,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/260">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Halloween
                                   </a>
@@ -1011,7 +1320,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 <Link href="/collections/209">
                                   <a
                                     className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => setIsLoading(true)}
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
                                   >
                                     Back to school
                                   </a>
@@ -1023,7 +1335,10 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                         <div className="mt-6 grid grid-cols-1 gap-6 text-center">
                           <div>
                             <Link href="/collections/227">
-                              <a className="font-bold font-serif text-xl">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
                                 Shop All Women’s
                               </a>
                             </Link>

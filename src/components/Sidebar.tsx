@@ -10,7 +10,7 @@ const Sidebar = ({ setMenuOpen, setIsLoading }) => {
   };
 
   return (
-    <div className="side-menu z-[100] fixed h-screen bg-white w-screen block sm:hidden overflow-scroll">
+    <div className="side-menu z-[100] fixed h-screen bg-white w-screen block lg:hidden overflow-scroll">
       <div className="title flex justify-between w-5/6 mx-auto py-4 sticky top-0 bg-white">
         <h2 className="font-bold">Omcub</h2>
         <div onClick={() => setMenuOpen(false)}>
@@ -285,13 +285,13 @@ const Sidebar = ({ setMenuOpen, setIsLoading }) => {
               </Link>
             </div>
           </div>
-          <div className="menu-item my-4">
+          {/* <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/collections/226">
                 <a onClick={onClickMenuItem}>Shop All Mens</a>
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       ) : (
         ""
@@ -549,13 +549,13 @@ const Sidebar = ({ setMenuOpen, setIsLoading }) => {
               </Link>
             </div>
           </div>
-          <div className="menu-item my-4">
+          {/* <div className="menu-item my-4">
             <div className="item font-serif font-bold">
               <Link href="/collections/227">
                 <a onClick={onClickMenuItem}>Shop All Womens</a>
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       ) : (
         ""

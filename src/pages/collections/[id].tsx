@@ -19,6 +19,7 @@ function Collections({
 }) {
   // return <h1>df</h1>;
   // const [isLoading, SetisLoading] = useState(true);
+
   const [categoryFlag, setCategoryFlag] = useState(category);
   const categoriesLists = categories;
   // return <h1></h1>;
@@ -56,11 +57,11 @@ function Collections({
   } else
     return (
       <>
-        {/* <div className="categories">
-        {categoriesLists.categories.map((category) => (
-          <h3 key={category.id}>{category.title + " " + category.id}</h3>
-        ))}
-      </div> */}
+        <div className="categories">
+          {categoriesLists.categories.map((category) => (
+            <h3 key={category.id}>{category.title + " " + category.id}</h3>
+          ))}
+        </div>
 
         {/* <div className="scrollbar border-b border-t border-gray-200">
           <div className="px-4">
@@ -108,7 +109,7 @@ function Collections({
               </div>
               <div className="categories flex pb-6 border-b border-gray-200">
                 <div className="category active">
-                  <Link href="/collections/1">
+                  <Link href="/collections/226">
                     <button className="text-white bg-[#f15a31] px-4 py-2 text-sm rounded mr-2">
                       Shop All
                     </button>

@@ -669,7 +669,7 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                           </div>
                           <div>
                             {/* <div className="mt-6 grid grid-cols-1 gap-6 text-center"> */}
-                            {/* <div>
+                            <div>
                               <Link href="/collections/226">
                                 <a
                                   className="font-bold font-serif text-xl"
@@ -678,7 +678,7 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                   Shop All Mens
                                 </a>
                               </Link>
-                            </div> */}
+                            </div>
                           </div>
                           {/* <div>
                             <Link href="#">
@@ -1355,7 +1355,7 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                               </a>
                             </Link>
                           </div>
-                          {/* <div>
+                          <div>
                             <Link href="/collections/227">
                               <a
                                 className="font-bold font-serif text-xl"
@@ -1364,7 +1364,7 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                                 Shop All Women’s
                               </a>
                             </Link>
-                          </div> */}
+                          </div>
                         </div>
                       </div>
                     </div>

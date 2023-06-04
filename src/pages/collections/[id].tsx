@@ -57,11 +57,11 @@ function Collections({
   } else
     return (
       <>
-        <div className="categories">
+        {/* <div className="categories">
           {categoriesLists.categories.map((category) => (
             <h3 key={category.id}>{category.title + " " + category.id}</h3>
           ))}
-        </div>
+        </div> */}
 
         {/* <div className="scrollbar border-b border-t border-gray-200">
           <div className="px-4">

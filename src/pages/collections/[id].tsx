@@ -8,6 +8,7 @@ import { PrintfulProduct } from "../../types";
 import ProductGrid from "../../components/ProductGrid";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function Collections({
   products,
@@ -107,9 +108,11 @@ function Collections({
               </div>
               <div className="categories flex pb-6 border-b border-gray-200">
                 <div className="category active">
-                  <button className="text-white bg-[#f15a31] px-4 py-2 text-sm rounded mr-2">
-                    Shop All
-                  </button>
+                  <Link href="/collections/1">
+                    <button className="text-white bg-[#f15a31] px-4 py-2 text-sm rounded mr-2">
+                      Shop All
+                    </button>
+                  </Link>
                 </div>
                 {/* <div className="category">
                   <button className="border border-[#d3c7c1] px-4 py-2 text-sm rounded mr-2">

@@ -55,7 +55,9 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                 >
                   <img src="/images/menu.svg" alt="Menu" />
                 </button>
-                <Link href="/">Omcub</Link>
+                <Link href="/">
+                  <a onClick={toggleMenu}>Omcub</a>
+                </Link>
               </span>
             </div>
             {/* </Link> */}

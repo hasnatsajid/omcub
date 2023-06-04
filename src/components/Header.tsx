@@ -81,7 +81,7 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                       <div className="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12.65rem] duration-500 ease-in-out rounded-sm"></div>
 
                       <div className="relative z-10">
-                        <div className="mt-6 grid grid-cols-8 gap-2">
+                        <div className="mt-6 grid grid-cols-6 gap-2">
                           <div>
                             <Link href="#">
                               <a
@@ -445,6 +445,8 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                               </li>
                             </ul>
                           </div>
+                        </div>
+                        <div className="mt-6 grid grid-cols-6 gap-2">
                           <div>
                             <Link href="/collections/243">
                               <a
@@ -493,8 +495,6 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                               </a>
                             </Link>
                           </div>
-                        </div>
-                        <div className="mt-6 grid grid-cols-6 gap-6">
                           <div>
                             <Link href="/collections/252">
                               <a
@@ -657,7 +657,18 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                               </li>
                             </ul>
                           </div>
-                          <div className="mt-6 grid grid-cols-1 gap-6 text-center">
+                          <div>
+                            <Link href="/collections/227">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
+                                Yoga mats
+                              </a>
+                            </Link>
+                          </div>
+                          <div>
+                            {/* <div className="mt-6 grid grid-cols-1 gap-6 text-center"> */}
                             <div>
                               <Link href="/collections/226">
                                 <a
@@ -728,7 +739,7 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                       <div className="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12.65rem] duration-500 ease-in-out rounded-sm"></div>
 
                       <div className="relative z-10">
-                        <div className="mt-6 grid grid-cols-8 gap-2">
+                        <div className="mt-6 grid grid-cols-6 gap-2">
                           <div>
                             {/* <p className="font-bold font-serif text-xl">
                               Girl Tops
@@ -1095,54 +1106,7 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                               </li> */}
                             </ul>
                           </div>
-                          <div>
-                            <Link href="/collections/243">
-                              <a
-                                className="font-bold font-serif text-xl"
-                                onClick={toggleMenu}
-                              >
-                                Tech accessories
-                              </a>
-                            </Link>
-                            <ul className="mt-3 text-[15px]">
-                              <li>
-                                <Link href="/collections/244">
-                                  <a
-                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => {
-                                      setIsLoading(true);
-                                      toggleMenu();
-                                    }}
-                                  >
-                                    Phones cases
-                                  </a>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href="/collections/250">
-                                  <a
-                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
-                                    onClick={() => {
-                                      setIsLoading(true);
-                                      toggleMenu();
-                                    }}
-                                  >
-                                    Laptop cases
-                                  </a>
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-                          <div>
-                            <Link href="/collections/228">
-                              <a
-                                className="font-bold font-serif text-xl"
-                                onClick={toggleMenu}
-                              >
-                                Kids & Youth
-                              </a>
-                            </Link>
-                          </div>
+
                           <div>
                             <Link href="/collections/252">
                               <a
@@ -1332,7 +1296,65 @@ const Header = ({ setMenuOpen, setIsLoading }) => {
                             </ul>
                           </div>
                         </div>
-                        <div className="mt-6 grid grid-cols-1 gap-6 text-center">
+                        <div className="mt-6 grid grid-cols-6 gap-2 ">
+                          <div>
+                            <Link href="/collections/243">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
+                                Tech accessories
+                              </a>
+                            </Link>
+                            <ul className="mt-3 text-[15px]">
+                              <li>
+                                <Link href="/collections/244">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
+                                  >
+                                    Phones cases
+                                  </a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href="/collections/250">
+                                  <a
+                                    className="text-gray-600 hover:text-gray-800 py-1 block font-normal"
+                                    onClick={() => {
+                                      setIsLoading(true);
+                                      toggleMenu();
+                                    }}
+                                  >
+                                    Laptop cases
+                                  </a>
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
+                          <div>
+                            <Link href="/collections/228">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
+                                Kids & Youth
+                              </a>
+                            </Link>
+                          </div>
+                          <div>
+                            <Link href="/collections/227">
+                              <a
+                                className="font-bold font-serif text-xl"
+                                onClick={toggleMenu}
+                              >
+                                Yoga mats
+                              </a>
+                            </Link>
+                          </div>
                           <div>
                             <Link href="/collections/227">
                               <a

@@ -61,7 +61,7 @@ function Collections({
         ))}
       </div> */}
 
-        <div className="scrollbar border-b border-t border-gray-200">
+        {/* <div className="scrollbar border-b border-t border-gray-200">
           <div className="px-4">
             <div className="flex py-4 overflow-scroll">
               <div className="category active">
@@ -91,7 +91,7 @@ function Collections({
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="collection">
           <div className="main">
@@ -111,7 +111,7 @@ function Collections({
                     Shop All
                   </button>
                 </div>
-                <div className="category">
+                {/* <div className="category">
                   <button className="border border-[#d3c7c1] px-4 py-2 text-sm rounded mr-2">
                     Short Sleeve
                   </button>
@@ -120,7 +120,7 @@ function Collections({
                   <button className="border border-[#d3c7c1] px-4 py-2 text-sm rounded mr-2">
                     Long Sleeve
                   </button>
-                </div>
+                </div> */}
               </div>
 
               <div className="filters my-6">

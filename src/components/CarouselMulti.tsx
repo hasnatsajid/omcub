@@ -126,16 +126,16 @@ const Carousel = ({ col, data }) => {
                   </a>
                 </Link>
 
-                <Link href={`/product/${resource.id}`}>
+                {/* <Link href={`/product/${resource.id}`}>
                   <a
                     href={resource.link}
                     className="h-full w-full aspect-square block absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 z-10"
                   >
-                    <h3 className="text-white py-6 px-3 mx-auto text-xl">
-                      {/* {resource.title} */}
-                    </h3>
+                    <h3 className="text-white py-6 px-3 mx-auto text-xl"> */}
+                {/* {resource.title} */}
+                {/* </h3>
                   </a>
-                </Link>
+                </Link> */}
               </div>
             );
           })}
